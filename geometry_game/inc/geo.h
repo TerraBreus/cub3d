@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:05:20 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/03 14:59:01 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/03 15:54:05 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "math.h"
 
 #define WINDOWSIZE 1000
+#define LINES 10
 
 #define RED      0xFF0000
 #define GREEN    0x00FF00
@@ -42,3 +43,4 @@ void	draw_hori_lines(t_data *img);
 void	draw_vert_lines(t_data *img);
 void	draw_line(t_data *img, float angle_deg, int length, int start_x, int start_y, int color);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
+void	draw_grid(t_data *img, int n);

@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   geometry.c                                         :+:      :+:    :+:   */
+/*   draw_grid.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 12:48:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/03 15:51:34 by zivanov          ###   ########.fr       */
+/*   Created: 2025/11/03 15:45:26 by zivanov           #+#    #+#             */
+/*   Updated: 2025/11/03 15:55:00 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "inc/geo.h"
 
-int	main(void)
-{
-	void	*mlx;
-	void	*mlx_win;
-	t_data	img;
+// Will draw a NxN matrix based on the dimension of the window.
 
-	mlx = mlx_init();
-	mlx_win = mlx_new_window(mlx, WINDOWSIZE, WINDOWSIZE, "waaaa");
-	img.img = mlx_new_image(mlx, WINDOWSIZE, WINDOWSIZE);
-	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
-	draw_grid(&img, LINES);
-	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-	mlx_loop(mlx);
-	return (0);
+void	draw_grid(t_data *img, int n)
+{
+	int		i;
+	int		offset;
+
+	offset = WINDOWSIZE / n;
+
+	for (i = 1; i <= n; i++)
+	{
+		draw_line(img, 0, WINDOWSIZE, 0, i * offset, GRAY);
+		draw_line(img, 90, WINDOWSIZE, i * offset, 0, GRAY);
+	}
 }
+
