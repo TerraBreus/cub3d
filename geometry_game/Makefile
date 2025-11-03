@@ -6,6 +6,7 @@ CFLAGS := -Werror -Wextra -Wall -Iinc
 SRC = geometry.c \
 	  draw_hori_lines.c \
 	  draw_vert_lines.c \
+	  draw_line.c		\
 	  my_mlx_pixel_put.c 
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))

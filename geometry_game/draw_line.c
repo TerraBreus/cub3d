@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   draw_line.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/03 14:40:35 by zivanov           #+#    #+#             */
+/*   Updated: 2025/11/03 14:56:35 by zivanov          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "inc/geo.h"
+
+void	draw_line(t_data *img, float angle_deg, int length, int start_x, int start_y, int color)
+{
+	float	dx;
+	float	dy;
+	int		i;
+
+	dx = cos((angle_deg / 180) * M_PI);
+	dy = sin((angle_deg / 180) * M_PI);
+
+	for (i = 0; i < length; i++)
+		my_mlx_pixel_put(img, start_x + (i * dx), start_y + (i * dy), color);
+}
+
