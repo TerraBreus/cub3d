@@ -16,12 +16,19 @@ void	draw_line(t_data *img, float angle_deg, int length, int start_x, int start_
 {
 	float	dx;
 	float	dy;
+	int		x;
+	int		y;
 	int		i;
 
 	dx = cos((angle_deg / 180) * M_PI);
 	dy = sin((angle_deg / 180) * M_PI);
 
 	for (i = 0; i < length; i++)
-		my_mlx_pixel_put(img, start_x + (i * dx), start_y + (i * dy), color);
+	{
+		x = start_x + (i * dx);
+		y = start_y + (i * dy);
+		if (x >= 0 && x < WINDOWSIZE && y >= 0 && y < WINDOWSIZE)
+			my_mlx_pixel_put(img, start_x + (i * dx), start_y + (i * dy), color);
+	}
 }
 
