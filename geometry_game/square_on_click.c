@@ -16,11 +16,19 @@ int	square_on_click(int keycode, int x, int y, t_mlx *mlx)
 {
 	x = x * LINES / WINDOWSIZE;
 	y = y * LINES / WINDOWSIZE;
-	printf("keycode %i\n x %i y: %i\n", keycode, x, y);
 	if (keycode == 1)
 	{
-		fill_square(mlx->img, x, y);
-		printf("%i and %i\n", x, y);
+		if (mlx->map[x][y] == 0)
+		{
+			fill_square(mlx->img, x, y, BLUE);
+			mlx->map[x][y] = 1;
+		}
+		else
+		{
+			fill_square(mlx->img, x, y, BLACK);
+			mlx->map[x][y] = 0;
+		}
+		draw_grid(mlx->img, LINES);
 		mlx_put_image_to_window(mlx->mlx, mlx->mlx_win, mlx->img->img, 0, 0);
 	}
 	(void) mlx;
