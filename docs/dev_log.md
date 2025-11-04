@@ -13,5 +13,7 @@ Some things I would like to implement for next session:
 
 - Adding a little round circle that follows the mouse.
 - Adding another little circle that can be moved through the wasd buttons.
+- Probably for session after; drawing a line between the two points.
 
 Most likely I will learn about layering in tomorrows session!
+
