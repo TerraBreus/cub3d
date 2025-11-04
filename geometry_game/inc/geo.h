@@ -45,6 +45,7 @@ typedef struct s_mlx {
 	void	*mlx;
 	void	*mlx_win;
 	t_data	*img;
+	int		map[LINES][LINES];
 }			t_mlx;
 
 // F U N C T I O N S
@@ -53,5 +54,5 @@ void	draw_vert_lines(t_data *img);
 void	draw_line(t_data *img, float angle_deg, int length, int start_x, int start_y, int color);
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 void	draw_grid(t_data *img, int n);
-void	fill_square(t_data *img, int x, int y);
+void	fill_square(t_data *img, int x, int y, int color);
 int		square_on_click(int keycode, int x, int y, t_mlx *mlx);

@@ -12,7 +12,7 @@
 
  #include "inc/geo.h"
 
-void	fill_square(t_data *img, int x, int y)
+void	fill_square(t_data *img, int x, int y, int color)
 {
 	int		dimension_square;
 	int		i;
@@ -22,8 +22,6 @@ void	fill_square(t_data *img, int x, int y)
 	dimension_square = WINDOWSIZE / LINES;
 
 	for (i = 0; i <= dimension_square; i++)
-	{
-		draw_line(img, 0, dimension_square, x * dimension_square, (y * dimension_square) + i, BLUE);
-	}
+		draw_line(img, 0, dimension_square, x * dimension_square, (y * dimension_square) + i, color);
 }
 
