@@ -17,6 +17,8 @@ void	fill_square(t_data *img, int x, int y)
 	int		dimension_square;
 	int		i;
 
+	if (x / LINES != 0 || y / LINES != 0)
+		return ; 
 	dimension_square = WINDOWSIZE / LINES;
 
 	for (i = 0; i <= dimension_square; i++)
