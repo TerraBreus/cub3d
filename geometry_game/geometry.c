@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 12:48:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/03 15:51:34 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/04 13:09:02 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "inc/geo.h"
@@ -22,6 +22,7 @@ int	main(void)
 	img.img = mlx_new_image(mlx, WINDOWSIZE, WINDOWSIZE);
 	img.addr = mlx_get_data_addr(img.img, &img.bits_per_pixel, &img.line_length, &img.endian);
 	draw_grid(&img, LINES);
+	fill_square(&img, 1, 1);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
 	mlx_loop(mlx);
 	return (0);

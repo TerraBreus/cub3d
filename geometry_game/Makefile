@@ -8,6 +8,7 @@ SRC = geometry.c \
 	  draw_vert_lines.c \
 	  draw_line.c		\
 	  draw_grid.c		\
+	  fill_square.c		\
 	  my_mlx_pixel_put.c 
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
