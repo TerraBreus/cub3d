@@ -1,14 +1,13 @@
 NAME := geometry_game
 CC := cc
 MLX = libmlx_Linux.a -lXext -lX11 -lm -lz
-CFLAGS := -Werror -Wextra -Wall -Iinc
+CFLAGS := -Werror -Wextra -Wall -Iinc -g
 
 SRC = geometry.c \
-	  draw_hori_lines.c \
-	  draw_vert_lines.c \
 	  draw_line.c		\
 	  draw_grid.c		\
 	  fill_square.c		\
+	  square_on_click.c	\
 	  my_mlx_pixel_put.c 
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
