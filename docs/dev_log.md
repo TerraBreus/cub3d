@@ -17,3 +17,22 @@ Some things I would like to implement for next session:
 
 Most likely I will learn about layering in tomorrows session!
 
+## 05-11
+
+In today’s session, a function was developed to blend multiple images into a single final image for display. This allows the program to combine background, tiles, and cursor images without redrawing or recalculating them each time. The current implementation successfully displays a movable square cursor controlled with the WASD keys. The function updates the cursor’s position by erasing its previous location and redrawing it at the new coordinates. There’s no handling yet for out-of-bounds movement, which can cause crashes.
+
+Next Steps:
+
+- Add a second movable cursor, controlled by the arrow keys.
+- Implement a line connecting the two cursors once both are functional.
+- Add boundary checks to prevent crashes when moving out of bounds.
+- (Optional) Explore mouse-based cursor control once hardware and hand comfort allow.
+
+## 09-11
+
+Still writing with left hand. So I will be brief:
+Made a cursor for the mouse and print it to screen. Very slow tho
+
+Can probs be optimized a little by having one layer for the cursors and one for the grid. Now I have two layers for the cursors and I blend them together.
+
+Also started with a function to draw a line between the two points. Currently function is called when pressing 'l' and then only the differences between the positions get printed.
