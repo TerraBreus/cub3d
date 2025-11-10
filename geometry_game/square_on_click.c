@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   square_on_click.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
+/*   By: terrabuntu <terrabuntu@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:33:56 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/04 21:32:29 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/05 22:35:20 by terrabuntu       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	square_on_click(int keycode, int x, int y, t_mlx *mlx)
 			mlx->map[x][y] = 0;
 		}
 		draw_grid(&(mlx->grid), LINES);
-		mlx_put_image_to_window(mlx->mlx, mlx->mlx_win, mlx->grid.img, 0, 0);
+		merge_images_and_push_to_window(mlx);
 	}
 	(void) mlx;
 	return (0);
