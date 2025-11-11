@@ -40,3 +40,4 @@ Also started with a function to draw a line between the two points. Currently fu
 ## 11-11
 REduced lag significantly by haing one layer (though still laggy). Draw line between points now works.
 I still need to hold the previous variables so I can remove the old line.
+EDIT: Line removes now
