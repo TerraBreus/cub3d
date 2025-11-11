@@ -36,3 +36,7 @@ Made a cursor for the mouse and print it to screen. Very slow tho
 Can probs be optimized a little by having one layer for the cursors and one for the grid. Now I have two layers for the cursors and I blend them together.
 
 Also started with a function to draw a line between the two points. Currently function is called when pressing 'l' and then only the differences between the positions get printed.
+
+## 11-11
+REduced lag significantly by haing one layer (though still laggy). Draw line between points now works.
+I still need to hold the previous variables so I can remove the old line.
