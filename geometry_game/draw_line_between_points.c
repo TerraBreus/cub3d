@@ -14,12 +14,18 @@
 
 void	draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2])
 {
-
-	int		dx;
-	int		dy;
+	float		length;
+	float		dx;
+	float		dy;
+	float		angle;
 
 	dx = k_pos[0] - m_pos[0];
 	dy = k_pos[1] - m_pos[1];
-	printf("dx %i, dy %i\n", dx, dy);
+	length = sqrt((dx * dx) + (dy * dy));
+	angle = acos(dx / length) * 180 / M_PI;
+	if (dy < 0)
+		angle *= -1;
+	draw_line(img, angle, length, m_pos[0], m_pos[1], PINK);
+	printf("dx %f, dy %f, length %f, acos %f\n", dx, dy, length, angle);
 	(void ) img;
 }
