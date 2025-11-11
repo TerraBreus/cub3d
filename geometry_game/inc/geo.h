@@ -52,8 +52,7 @@ typedef struct s_mlx {
 	void	*mlx_win;
 	t_data	ui;
 	t_data	grid;
-	t_data	mouse;
-	t_data	keyboard;
+	t_data	cursors;
 	int		map[LINES][LINES];
 	int		keyboard_pos[2];
 	int		mouse_pos[2];
@@ -73,4 +72,4 @@ int				merge_images_and_push_to_window(t_mlx *mlx);
 void			draw_keyboard(t_data *img, int pos[2]);
 int				move_mouse(int x, int y, t_mlx *mlx);
 void			draw_mouse(t_data *img, int pos[2]);
-void	draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2]);
+void			draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2]);
