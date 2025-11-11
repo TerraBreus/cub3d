@@ -19,7 +19,7 @@ int	move_mouse(int x, int y, t_mlx *mlx)
 	{
 		mlx->mouse_pos[0] = x;
 		mlx->mouse_pos[1] = y;
-		draw_mouse(&(mlx->mouse), mlx->mouse_pos);
+		draw_mouse(&(mlx->cursors), mlx->mouse_pos);
 		merge_images_and_push_to_window(mlx);
 	}
 	return (0);

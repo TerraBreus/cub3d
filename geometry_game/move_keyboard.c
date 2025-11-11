@@ -14,7 +14,7 @@
 
 int	move_keyboard(int keycode, t_mlx *mlx)
 {
-	printf("keycode %i\n", keycode);
+	//printf("keycode %i\n", keycode);
 	if (keycode == UP)
 		mlx->keyboard_pos[1]--;
 	else if (keycode == DOWN)
@@ -26,7 +26,7 @@ int	move_keyboard(int keycode, t_mlx *mlx)
 	
 	else if (keycode == 108)
 		draw_line_between_points(&(mlx->grid), mlx->keyboard_pos, mlx->mouse_pos);
-	draw_keyboard(&(mlx->keyboard), mlx->keyboard_pos);
+	draw_keyboard(&(mlx->cursors), mlx->keyboard_pos);
 	merge_images_and_push_to_window(mlx);
 	return (0);
 }

@@ -19,9 +19,8 @@ int	init_data(t_mlx *mlx)
 	mlx->keyboard_pos[0] = WINDOWSIZE / 2;
 	mlx->keyboard_pos[1] = WINDOWSIZE / 2;
 	my_mlx_create_image(mlx->mlx, &(mlx->ui));
-	my_mlx_create_image(mlx->mlx, &(mlx->mouse));
+	my_mlx_create_image(mlx->mlx, &(mlx->cursors));
 	my_mlx_create_image(mlx->mlx, &(mlx->grid));
-	my_mlx_create_image(mlx->mlx, &(mlx->keyboard));
 	return (0);
 }
 

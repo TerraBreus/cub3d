@@ -11,13 +11,9 @@ int	merge_images_and_push_to_window(t_mlx *mlx)
 	{
 		for (y = 0; y < WINDOWSIZE; y++)
 		{
-			temp_color = get_pixel_color(&(mlx->keyboard), x, y); 
+			temp_color = get_pixel_color(&(mlx->cursors), x, y); 
 			if (temp_color == BLACK)
-			{
-				temp_color = get_pixel_color(&(mlx->mouse), x, y);
-				if (temp_color == BLACK)
-					temp_color = get_pixel_color(&(mlx->grid), x, y);
-			}
+				temp_color = get_pixel_color(&(mlx->grid), x, y);
 			my_mlx_pixel_put(&(mlx->ui), x, y, temp_color);
 		}		
 	}

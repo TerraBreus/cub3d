@@ -18,7 +18,7 @@ int	main(void)
 
 	init_data(&mlx);
 	draw_grid(&(mlx.grid), LINES);
-	draw_keyboard(&(mlx.keyboard), mlx.keyboard_pos);
+	draw_keyboard(&(mlx.cursors), mlx.keyboard_pos);
 	merge_images_and_push_to_window(&mlx);
 	mlx_hook(mlx.mlx_win, BUTTONPRESS, (1L<<2), square_on_click, &mlx);
 	mlx_hook(mlx.mlx_win, KEYPRESS, (1L<<0), move_keyboard, &mlx);
