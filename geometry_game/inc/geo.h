@@ -6,7 +6,7 @@
 /*   By: terrabuntu <terrabuntu@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 14:05:20 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/06 17:06:22 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/13 20:48:35 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,5 @@ int				merge_images_and_push_to_window(t_mlx *mlx);
 void			draw_keyboard(t_data *img, int pos[2]);
 int				move_mouse(int x, int y, t_mlx *mlx);
 void			draw_mouse(t_data *img, int pos[2]);
+void			cast_ray(t_data *img, float angle, int x, int y);
 void			draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2]);

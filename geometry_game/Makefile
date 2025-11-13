@@ -8,6 +8,7 @@ SRC = main.c \
 	  draw_line.c		\
 	  draw_grid.c		\
 	  fill_square.c		\
+	  DDA_attempt.c		\
 	  move_keyboard.c	\
 	  square_on_click.c	\
 	  move_mouse.c		\

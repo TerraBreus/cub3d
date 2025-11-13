@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 16:58:43 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/06 17:08:13 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/13 20:51:19 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ void	draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2])
 	remove_old_line(img, angle, length, m_pos[0], m_pos[1]);
 	draw_line(img, angle, length, m_pos[0], m_pos[1], PINK);
 	printf("dx %f, dy %f, length %f, acos %f\n", dx, dy, length, angle);
+	cast_ray(img, angle, m_pos[0], m_pos[1]);
 	(void ) img;
 }
