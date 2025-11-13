@@ -10,8 +10,8 @@ void	draw_keyboard(t_data *img, int pos[2])
 		draw_line(img, 0, 10, old_pos[0], old_pos[1] + i, BLACK);
 
 	for (i = 0; i < 10; i++)
-		draw_line(img, 0, 10, pos[0], pos[1] + i, RED);
-	old_pos[0] = pos[0];
-	old_pos[1] = pos[1];
+		draw_line(img, 0, 10, pos[0] - 5, pos[1] - 5 + i, RED);
+	old_pos[0] = pos[0] - 5;
+	old_pos[1] = pos[1] - 5;
 }
 	
