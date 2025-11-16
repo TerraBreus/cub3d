@@ -72,5 +72,5 @@ int				merge_images_and_push_to_window(t_mlx *mlx);
 void			draw_keyboard(t_data *img, int pos[2]);
 int				move_mouse(int x, int y, t_mlx *mlx);
 void			draw_mouse(t_data *img, int pos[2]);
-void			cast_ray(t_data *img, float angle, int x, int y, int *(map[LINES][LINES]));
-void			draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2], int *(map[LINES][LINES]));
+void			cast_ray(t_data *img, float angle, int x, int y, t_mlx *mlx);
+void			draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2], t_mlx *mlx);
