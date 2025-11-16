@@ -24,7 +24,7 @@ static void	remove_old_line(t_data *img, float angle, float length, int x, int y
 	pos[3] = y;
 }
 
-void	draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2])
+void	draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2], int *map[LINES][LINES])
 {
 	float			dx;
 	float			dy;
@@ -38,8 +38,8 @@ void	draw_line_between_points(t_data *img, int k_pos[2], int m_pos[2])
 	if (dy < 0)
 		angle *= -1;
 	remove_old_line(img, angle, length, m_pos[0], m_pos[1]);
-	draw_line(img, angle, length, m_pos[0], m_pos[1], PINK);
+	//draw_line(img, angle, length, m_pos[0], m_pos[1], PINK);
+	cast_ray(img, angle, m_pos[0], m_pos[1], map);
 	printf("dx %f, dy %f, length %f, acos %f\n", dx, dy, length, angle);
-	cast_ray(img, angle, m_pos[0], m_pos[1]);
 	(void ) img;
 }
