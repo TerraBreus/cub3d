@@ -41,3 +41,10 @@ Also started with a function to draw a line between the two points. Currently fu
 REduced lag significantly by haing one layer (though still laggy). Draw line between points now works.
 I still need to hold the previous variables so I can remove the old line.
 EDIT: Line removes now
+
+## 16-11
+Some time has passed. A lot of code has been written over the past few days. Commit messages are not too great and no logging. it was abunch of experimenting with the DDA algrotihm. My code definitely does something, but not what it needs to do.
+
+A failed attempt but I learned a lot in the process.
+
+Most likely I will start again tomorrow with another DDA attempt from scratch. I want to use a better approach but not too sure how. I like doing things the hard way by trial and error. But that takes time and often also a toll on my mental health... we will see
