@@ -48,3 +48,6 @@ Some time has passed. A lot of code has been written over the past few days. Com
 A failed attempt but I learned a lot in the process.
 
 Most likely I will start again tomorrow with another DDA attempt from scratch. I want to use a better approach but not too sure how. I like doing things the hard way by trial and error. But that takes time and often also a toll on my mental health... we will see
+
+## 17-11
+Short session. Tired but thought about new approach for DDA. thinking that it will help to separate the x and y component of the ray more. Hopefully that will make sense along the way
