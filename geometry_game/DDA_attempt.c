@@ -77,22 +77,32 @@ double	calc_ray_length(float angle, double ds, double pos_x, double pos_y, t_mlx
 */
 double	calc_ray_length(double angle_r, double x, double y, t_mlx *mlx)
 {
-	double	d_xy[2];		//dx and dy respect. Direction of the ray in x & y dir.
-	double	ds_xy[2];		//the length of the ray for going to the next x/y line.
+	double	dx_dy[2];		//dx and dy respect. Direction of the ray in x & y dir.
+	double	dsx_dsy[2];		//the length of the ray for going to the next x/y line.
 	double	nxt_xy[2];		//the dist. to the next x or y line (hor/ver).
 	double	result;			//the total length of the ray;
 	
+	dx_dy[0] = cos(angle_r);
+	dx_dy[1] = sin(angle_r);
 
+	nxt_xy[0] = 1;
+	nxt_xy[1] = 1;
+	dsx_dsy[0] = 1;
+	dsx_dsy[1] = 1;
+	result = 1;
+	(void) mlx;
+	printf("\n\nx %f, y %f, angle %f\n dx: %f, dy %f\nnxt x %f, nxt y %f,\ndsx %f, dsy %f\n", x, y, angle_r, dx_dy[0], dx_dy[1], nxt_xy[0], nxt_xy[1], dsx_dsy[0], dsx_dsy[1]);
+	return (result);
 }
 
-void	cast_ray(t_data *img, double angle, int  pix_x, int pix_y y, t_mlx *mlx)
+void	cast_ray(t_data *img, double angle, int  pix_x, int pix_y, t_mlx *mlx)
 {
 	double		ray_length;
 	double		cell_size;
 
 	cell_size = (double) WINDOWSIZE / LINES;
-	printf("%f, %f, %f\n", (angle / 180) * M_PI, (double) (pix_x / cell_size), (double)  (pix_y / cell_size));
-	ray_length = calc_ray_length((angle / 180) * M_PI, (double) (pix_x / cell_size), (double)  (pix_y / cell_size), t_mlx *mlx);
+	printf("pix_x %i, pix_y %i cs %f\n", pix_x, pix_y, cell_size);
+	ray_length = calc_ray_length((angle / 180) * M_PI, ((double) pix_x) / cell_size, ((double)  pix_y) / cell_size, mlx);
 	draw_line(img, angle, (int) (ray_length * cell_size), pix_x, pix_y, ORANGE);
 }
 
