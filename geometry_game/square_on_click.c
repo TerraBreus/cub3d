@@ -20,6 +20,7 @@ int	square_on_click(int keycode, int x, int y, t_mlx *mlx)
 	{
 		if (mlx->map[x][y] == 0)
 		{
+			printf("filling square on map[%i][%i]\n", x, y);
 			fill_square(&(mlx->grid), x, y, BLUE);
 			mlx->map[x][y] = 1;
 		}
