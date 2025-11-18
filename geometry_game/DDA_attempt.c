@@ -80,18 +80,54 @@ double	calc_ray_length(double angle_r, double x, double y, t_mlx *mlx)
 	double	dx_dy[2];		//dx and dy respect. Direction of the ray in x & y dir.
 	double	dsx_dsy[2];		//the length of the ray for going to the next x/y line.
 	double	nxt_xy[2];		//the dist. to the next x or y line (hor/ver).
-	double	result;			//the total length of the ray;
+	double	result = 0;			//the total length of the ray;
 	
 	dx_dy[0] = cos(angle_r);
-	dx_dy[1] = sin(angle_r);
+	dx_dy[1] = -sin(angle_r);
 
-	nxt_xy[0] = 1;
-	nxt_xy[1] = 1;
-	dsx_dsy[0] = 1;
-	dsx_dsy[1] = 1;
-	result = 1;
-	(void) mlx;
-	printf("\n\nx %f, y %f, angle %f\n dx: %f, dy %f\nnxt x %f, nxt y %f,\ndsx %f, dsy %f\n", x, y, angle_r, dx_dy[0], dx_dy[1], nxt_xy[0], nxt_xy[1], dsx_dsy[0], dsx_dsy[1]);
+	int i = -1;
+	while (++i < 2)
+	{
+		printf("\n\nx %f, y %f\n", x, y);
+		nxt_xy[0] = -1 * fmod(x, 1);
+		if (nxt_xy[0] == 0)
+		{
+			nxt_xy[0] = 1;
+			if (dx_dy[0] < 0)
+				nxt_xy[0] = -1;
+		}
+		else if (dx_dy[0] > 0)
+			nxt_xy[0] = nxt_xy[0] + 1;
+
+		nxt_xy[1] = -1 * fmod(y, 1);
+		if (nxt_xy[1] == 0)
+		{
+			nxt_xy[1] = 1;
+			if (dx_dy[1] < 0)
+				nxt_xy[1] = -1;
+		}
+		else if (dx_dy[1] > 0)
+			nxt_xy[1] = nxt_xy[1] + 1;
+		dsx_dsy[0] = nxt_xy[0] / dx_dy[0];
+		dsx_dsy[1] = nxt_xy[1] / dx_dy[1];
+		if (fabs(dsx_dsy[0]) > fabs(dsx_dsy[1]))
+		{
+			result += fabs(dsx_dsy[1]);
+			y += nxt_xy[1];
+			x += (dsx_dsy[1] * dx_dy[0]);
+		}
+		else
+		{
+			result += fabs(dsx_dsy[0]);
+			x += nxt_xy[0];
+			y += (dsx_dsy[0] * dx_dy[1]);
+		}
+		
+		printf("angle %f\nnxt x %f, nxt y %f\ndx: %f, dy %f\ndsx %f, dsy %f\n", angle_r, nxt_xy[0], nxt_xy[1], dx_dy[0], dx_dy[1], dsx_dsy[0], dsx_dsy[1]);
+		printf("new_x %f, new y %f\n", x, y);
+		if (mlx->map[(int) (x)][(int) (y)] == 1)
+			printf("wall detected at x[%i] y[%i]\n", (int) x, (int) y);
+	}
 	return (result);
 }
 
@@ -102,7 +138,7 @@ void	cast_ray(t_data *img, double angle, int  pix_x, int pix_y, t_mlx *mlx)
 
 	cell_size = (double) WINDOWSIZE / LINES;
 	printf("pix_x %i, pix_y %i cs %f\n", pix_x, pix_y, cell_size);
-	ray_length = calc_ray_length((angle / 180) * M_PI, ((double) pix_x) / cell_size, ((double)  pix_y) / cell_size, mlx);
+	ray_length = calc_ray_length((angle / 180) * -M_PI, ((double) pix_x) / cell_size, ((double)  pix_y) / cell_size, mlx);
 	draw_line(img, angle, (int) (ray_length * cell_size), pix_x, pix_y, ORANGE);
 }
 
