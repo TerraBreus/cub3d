@@ -51,3 +51,6 @@ Most likely I will start again tomorrow with another DDA attempt from scratch. I
 
 ## 17-11
 Short session. Tired but thought about new approach for DDA. thinking that it will help to separate the x and y component of the ray more. Hopefully that will make sense along the way
+
+## 18-11
+Getting closer to a working project. Calculating length of ray correctly now. However wall collision is still a bit wonky. From what I can see there will always be 4 scenarios to take into account. Wall collision from left to right, from right to left, from up to down and from down to up.
