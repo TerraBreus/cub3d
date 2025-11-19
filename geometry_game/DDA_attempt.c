@@ -16,8 +16,8 @@ int	detect_wall_vert(double dir, int x, int y, t_mlx *mlx)
 {
 	if (dir > 0)
 	{
-		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x + 1][(int) y]);
-		return (mlx->map[x + 1][y]);
+		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x][(int) y]);
+		return (mlx->map[x][y]);
 	}
 	else
 	{
@@ -30,8 +30,8 @@ int	detect_wall_hori(double dir, int x, int y, t_mlx *mlx)
 {
 	if (dir > 0)
 	{
-		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x][(int) y + 1]);
-		return (mlx->map[x][y + 1]);
+		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x][(int) y]);
+		return (mlx->map[x][y]);
 	}
 	else
 	{
