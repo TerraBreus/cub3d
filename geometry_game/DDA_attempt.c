@@ -12,69 +12,34 @@
 
 #include "inc/geo.h"
 
-/*
-double	calc_ray_length(float angle, double ds, double pos_x, double pos_y, t_mlx *mlx)
+int	detect_wall_vert(double dir, int x, int y, t_mlx *mlx)
 {
-	//see whether ds_x or ds_y is bigger
-	//based on that calculate the length of the ray.
-	//based on the length calculate new coordinates
-	//check if new coordinates are a wall
-	//if not cast the function again (recursively)
-	//otherwise return the length + the new extra new bit.
-	double	ds_x;
-	double	ds_y;
-	double	nxt_vline;
-	double	nxt_hline;
-	int		i;
-
-	i  = 0;
-	printf("x %i, y %i map %i\n", (int) pos_x, (int) pos_y, mlx->map[(int ) pos_x][(int ) pos_y]);
-	while ((mlx->map[(int ) pos_x][(int ) pos_y] == 0) && i < 30)
+	if (dir > 0)
 	{
-		i++;
-		nxt_hline = fmod(pos_y, 1);
-		if (nxt_hline == 0)
-			nxt_hline = 1;
-		nxt_vline = fmod(pos_x, 1);
-		if (nxt_vline == 0)
-			nxt_vline = 1;
-		if (angle > -90 && angle < 90)
-		{
-			if (nxt_vline != 1)
-				nxt_vline = 1 - nxt_vline;
-		}
-		else
-		{
-			nxt_vline *= -1;
-		}
-		if (angle > 0 && angle < 180)
-		{
-			if (nxt_hline != 1)
-				nxt_hline = 1 - nxt_hline; 
-		}
-		else
-		{
-			nxt_hline *= -1;
-		}
-		ds_x = fabs(nxt_vline) / cos(angle);
-		ds_y = fabs(nxt_hline) / sin(angle );
-		if (fabs(ds_x) < fabs(ds_y))
-		{
-			pos_x += nxt_vline; //(or -=)
-			pos_y += (ds_x * sin((angle / 180) * M_PI));
-			ds += fabs(ds_x);
-		}
-		else
-		{
-			pos_x += (ds_y * cos((angle / 180) * M_PI));
-			pos_y += nxt_hline;
-			ds += fabs(ds_y);
-		}
-		printf("ds %f, x %f y %f\n", ds, pos_x, pos_y);
+		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x + 1][(int) y]);
+		return (mlx->map[x + 1][y]);
 	}
-	return (ds);
+	else
+	{
+		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x - 1][(int) y]);
+		return (mlx->map[x - 1][y]);
+	}	
 }
-*/
+
+int	detect_wall_hori(double dir, int x, int y, t_mlx *mlx)
+{
+	if (dir > 0)
+	{
+		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x][(int) y + 1]);
+		return (mlx->map[x][y + 1]);
+	}
+	else
+	{
+		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x][(int) y - 1]);
+		return (mlx->map[x][y - 1]);
+	}	
+}
+
 double	calc_ray_length(double angle_r, double x, double y, t_mlx *mlx)
 {
 	double	dx_dy[2];		//dx and dy respect. Direction of the ray in x & y dir.
@@ -86,7 +51,7 @@ double	calc_ray_length(double angle_r, double x, double y, t_mlx *mlx)
 	dx_dy[1] = -sin(angle_r);
 
 	int i = -1;
-	while (++i < 2)
+	while (++i < 20)
 	{
 		printf("\n\nx %f, y %f\n", x, y);
 		nxt_xy[0] = -1 * fmod(x, 1);
@@ -115,18 +80,20 @@ double	calc_ray_length(double angle_r, double x, double y, t_mlx *mlx)
 			result += fabs(dsx_dsy[1]);
 			y += nxt_xy[1];
 			x += (dsx_dsy[1] * dx_dy[0]);
+			if (detect_wall_hori(dx_dy[1], (int) x, (int) y, mlx))
+				break ;
 		}
 		else
 		{
 			result += fabs(dsx_dsy[0]);
 			x += nxt_xy[0];
 			y += (dsx_dsy[0] * dx_dy[1]);
+			if (detect_wall_vert(dx_dy[0], (int) x, (int) y, mlx))
+				break ;
 		}
 		
 		printf("angle %f\nnxt x %f, nxt y %f\ndx: %f, dy %f\ndsx %f, dsy %f\n", angle_r, nxt_xy[0], nxt_xy[1], dx_dy[0], dx_dy[1], dsx_dsy[0], dsx_dsy[1]);
 		printf("new_x %f, new y %f\n", x, y);
-		if (mlx->map[(int) (x)][(int) (y)] == 1)
-			printf("wall detected at x[%i] y[%i]\n", (int) x, (int) y);
 	}
 	return (result);
 }
