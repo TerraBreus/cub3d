@@ -14,7 +14,7 @@
 
 int	move_keyboard(int keycode, t_mlx *mlx)
 {
-	printf("keycode %i\n", keycode);
+	printf("\n\nkeycode %i\n", keycode);
 	if (keycode == UP)
 		mlx->keyboard_pos[1]--;
 	else if (keycode == DOWN)
