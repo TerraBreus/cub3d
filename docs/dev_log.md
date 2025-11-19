@@ -54,3 +54,6 @@ Short session. Tired but thought about new approach for DDA. thinking that it wi
 
 ## 18-11
 Getting closer to a working project. Calculating length of ray correctly now. However wall collision is still a bit wonky. From what I can see there will always be 4 scenarios to take into account. Wall collision from left to right, from right to left, from up to down and from down to up.
+
+## 19-11
+!!!!!! Wall detection has been done! We can try to shoot a bunch of rays now maybe and then technically we can go to the next stage (which is the actual game)
