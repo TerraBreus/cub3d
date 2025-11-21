@@ -18,6 +18,7 @@ Below an example of a ray encountering a wall:
 **NB: The game does not close properly cause I'm lazy. You must sig_interrupt by pressing `ctrl+c` in the terminal that is running the program...**
 ## How to run?
 lol if anyone is interested you can try it out yourself:
+</div>
 
 ```
 git clone https://github.com/TerraBreus/cub3d.git cub3d_terra
@@ -25,4 +26,3 @@ cd ./cub3d_terra/geometry_game
 make
 ./geometry_game
 ```
-</div>
