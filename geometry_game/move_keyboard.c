@@ -14,18 +14,20 @@
 
 int	move_keyboard(int keycode, t_mlx *mlx)
 {
-	printf("\n\nkeycode %i\n", keycode);
+	int	move_speed = 5;
+
 	if (keycode == UP)
-		mlx->keyboard_pos[1]--;
+		mlx->keyboard_pos[1] -= move_speed;
 	else if (keycode == DOWN)
-		mlx->keyboard_pos[1]++;
+		mlx->keyboard_pos[1] += move_speed;
 	else if (keycode == LEFT)
-		mlx->keyboard_pos[0]--;
+		mlx->keyboard_pos[0] -= move_speed;
 	else if (keycode == RIGHT)
-		mlx->keyboard_pos[0]++;
-	
+		mlx->keyboard_pos[0] += move_speed;
 	else if (keycode == 108)
 		draw_line_between_points(&(mlx->cursors), mlx->keyboard_pos, mlx->mouse_pos, mlx);
+	else
+		printf("\n\nkeycode %i\n", keycode);
 	draw_keyboard(&(mlx->cursors), mlx->keyboard_pos);
 	merge_images_and_push_to_window(mlx);
 	return (0);
