@@ -11,9 +11,25 @@
 /* ************************************************************************** */
 
 #include "inc/geo.h"
+int	out_of_bounds(int x, int y)
+{
+	if (x > (LINES - 1) || x < 0)
+	{
+		printf("x of bounds! x:%i\n", x);
+		return (1);
+	}
+	if (y > (LINES - 1) || y < 0)
+	{
+		printf("y out of bounds. y:%i\n", y);
+		return (1);
+	}
+	return (0);
+}
 
 int	detect_wall_vert(double dir, int x, int y, t_mlx *mlx)
 {
+	if (out_of_bounds(x, y))
+		return (0);
 	if (dir > 0)
 	{
 		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x][(int) y]);
@@ -28,6 +44,8 @@ int	detect_wall_vert(double dir, int x, int y, t_mlx *mlx)
 
 int	detect_wall_hori(double dir, int x, int y, t_mlx *mlx)
 {
+	if (out_of_bounds(x, y))
+		return (0);
 	if (dir > 0)
 	{
 		printf("map[x: %i][y: %i] = %i\n", (int) x, (int) y, mlx->map[(int) x][(int) y]);
