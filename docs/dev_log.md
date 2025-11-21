@@ -57,3 +57,17 @@ Getting closer to a working project. Calculating length of ray correctly now. Ho
 
 ## 19-11
 !!!!!! Wall detection has been done! We can try to shoot a bunch of rays now maybe and then technically we can go to the next stage (which is the actual game)
+
+## 21-11
+Though buggy and very much not leak proof, I think it is time to abandon our [geometry game](../geometry_game) and start with a clean slate again. For today I think I could write a small readme for the (un)finished "game". Afterwards we will have to think what the next phase is going to be. I'm thinking of having a topdown map again with a player on screen that can move around with the wasd keys. You can then shoot a beam of rays with the arrow keys. My reasons for doing this in a whole other project is cause I made too many strange choices that if I have to correct them, I end up doing more work than rewriting with the new knowledge gained.
+
+Some pointers I'd like changed in the new version:
+- Keyboard cursor is just a small image of 10x10 pixels that gets pushed to the window without having to constantly merge background and foreground.
+    although, then where do I keep the rays?
+- Different files for all the relevant DDA functions.
+- No more mouse cursor but clicking still creates a square.
+- Events are handled by a `keyboard_event` and `mouse_event` that reroute to the correct function based on the keycode.
+- An event that shoots 90 rays (from -45 to 45) and beams it to the top down map.
+- Another event that creates a new window showing an image of what the beams give when converted to their height on the screen. (basically a single frame of the wolfenstein game).
+
+While writing, I think it would also be cool to have a map editor. A "simple" program that takes in the dimensions (MxN) and allows you a basic painting option much like the [square on click function](../geometry_game/square_on_click.c). When exiting it saves the map created in a .txt file or something with `1` for a wall and `0` for no-wall.
