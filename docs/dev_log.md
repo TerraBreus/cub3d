@@ -1,3 +1,6 @@
+## 28-10
+Creation of repo and simply brainstorming on the subject notes + notes from watching other repos.
+
 ## 03-11
 
 Watching [this](https://www.youtube.com/watch?v=NbSee-XM7WA&t=1505s&pp=ygUIRERBIGluIEM%3D) video I wanted to understand raytracing a little bit better by making another small game. This will also allow me to understand the graphical library a little better and improve fundamental skills for programming (experimenting and testing without having a guide or end result). 
