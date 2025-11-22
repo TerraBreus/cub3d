@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/22 09:19:20 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/22 12:22:34 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,33 @@
 #define BROWN    0x8B4513
 #define GRAY     0x808080
 
-typedef struct	s_data {
+typedef struct	s_img {
 	void	*img;
 	char	*addr;
 	int		bits_per_pixel;
 	int		line_length;
 	int		endian;
-}				t_data;
+}			t_img;
 
-typedef struct s_mlx {
+typedef struct s_user {
+	t_img	img;
+	float	pos[2];
+	float	direction;
+}			t_user;
+
+typedef struct s_data {
 	void	*mlx;
 	void	*mlx_win;
-	t_data	ui;
-	t_data	grid;
-	t_data	cursors;
+	t_img	grid;
+	t_img	rays;
+	t_user	user;
 	int		map[LINES][LINES];
-	int		keyboard_pos[2];
-	int		mouse_pos[2];
-}			t_mlx;
+}			t_data;
 
 // F U N C T I O N S
+void	init_data(t_data *data);
+void	my_mlx_create_image(void *mlx, t_img *img, int size);
+void	draw_line(t_img *img, float angle_deg, int length, int start_x, int start_y, int color);
+void	init_grid(t_data *data);
+void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
+void	fill_square(t_img *img, int x, int y, int color);
