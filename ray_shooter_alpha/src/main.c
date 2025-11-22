@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 08:58:47 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/22 09:21:14 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/22 11:50:29 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 int	main(void)
 {
-	//init_data();
+	t_data	data;
+
+	init_data(&data);
 	//hook_events();
-	//mlx_loop();
+	mlx_loop(data.mlx);
 	return (0);
 }
