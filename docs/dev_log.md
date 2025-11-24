@@ -74,3 +74,15 @@ Some pointers I'd like changed in the new version:
 - Another event that creates a new window showing an image of what the beams give when converted to their height on the screen. (basically a single frame of the wolfenstein game).
 
 While writing, I think it would also be cool to have a map editor. A "simple" program that takes in the dimensions (MxN) and allows you a basic painting option much like the [square on click function](../geometry_game/square_on_click.c). When exiting it saves the map created in a .txt file or something with `1` for a wall and `0` for no-wall.
+
+## 23-11
+I realise a day later I had not written a log. Basically started the ray\_shoot program by copying a bunch of functions from the geometry\_game and altering them to fit my the new requirements (somewhat).
+
+## 24-11
+Running out of time so I have not refactored the DDA file (justcopied it). But...
+- Added wall collision.
+- Added player movement.
+- Added creating of walls.
+- Added a very simple, one directional, ray shooter that shoots 90 rays.
+
+I'm thinking of taking the mouse cursor as the direction for the rays but that might be a tad too much effort at this stage.
