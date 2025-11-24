@@ -6,17 +6,19 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/24 09:37:57 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/24 16:12:10 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include <math.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #define WINDOWSIZE 1000
 #define LINES 20
 #define USERSIZE 10
+#define MOVESPEED 4
 
 #define BUTTONPRESS 04
 #define KEYPRESS 02
@@ -71,3 +73,9 @@ void	init_grid(t_data *data);
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void	fill_square(t_img *img, int x, int y, int color);
 void	init_user(void *mlx, t_user *u);
+void	render_window(t_data *data, bool ray);
+void	square_on_click(int x, int y, t_data *data);
+void	hook_events(t_data *data, void *mlx_win);
+void	square_on_click(int x, int y, t_data *data);
+int		keyboard(int keycode, t_data *data);
+int		mouse_click(int keycode, int x, int y, t_data *data);

@@ -5,13 +5,17 @@ CFLAGS := -Werror -Wextra -Wall -Iinc -g
 
 SRC = \
 	  draw_line.c \
+	  render_window.c \
 	  init_user.c \
 	  fill_square.c \
 	  init_data.c \
 	  init_grid.c \
 	  main.c \
 	  my_mlx_create_image.c \
-	  my_mlx_pixel_put.c
+	  mouse_click.c \
+	  keyboard.c \
+	  my_mlx_pixel_put.c \
+	  square_on_click.c 
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
