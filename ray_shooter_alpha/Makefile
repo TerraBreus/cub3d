@@ -5,6 +5,7 @@ CFLAGS := -Werror -Wextra -Wall -Iinc -g
 
 SRC = \
 	  draw_line.c \
+	  init_user.c \
 	  fill_square.c \
 	  init_data.c \
 	  init_grid.c \

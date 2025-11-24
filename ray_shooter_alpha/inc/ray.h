@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/22 12:22:34 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/24 09:37:57 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #define WINDOWSIZE 1000
 #define LINES 20
+#define USERSIZE 10
 
 #define BUTTONPRESS 04
 #define KEYPRESS 02
@@ -69,3 +70,4 @@ void	draw_line(t_img *img, float angle_deg, int length, int start_x, int start_y
 void	init_grid(t_data *data);
 void	my_mlx_pixel_put(t_img *data, int x, int y, int color);
 void	fill_square(t_img *img, int x, int y, int color);
+void	init_user(void *mlx, t_user *u);
