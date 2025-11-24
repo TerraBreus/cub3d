@@ -86,3 +86,9 @@ Running out of time so I have not refactored the DDA file (justcopied it). But..
 - Added a very simple, one directional, ray shooter that shoots 90 rays.
 
 I'm thinking of taking the mouse cursor as the direction for the rays but that might be a tad too much effort at this stage.
+
+LOOK!!!!
+
+<img width="408" height="234" alt="image" src="https://github.com/user-attachments/assets/c8b6b513-3907-4d61-b914-448a276f0407" />
+<img width="576" height="304" alt="image" src="https://github.com/user-attachments/assets/45014a6b-a36f-4fbb-b566-780b828c4c6e" />
+
