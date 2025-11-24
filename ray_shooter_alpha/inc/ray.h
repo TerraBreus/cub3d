@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/24 16:12:10 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/24 17:45:50 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,6 @@ void	square_on_click(int x, int y, t_data *data);
 void	hook_events(t_data *data, void *mlx_win);
 void	square_on_click(int x, int y, t_data *data);
 int		keyboard(int keycode, t_data *data);
+bool	wall_collision(int x, int y, t_data *data);
+void	move_player(float pos[2], int keycode, t_data *data);
 int		mouse_click(int keycode, int x, int y, t_data *data);

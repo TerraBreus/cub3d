@@ -14,6 +14,8 @@ SRC = \
 	  my_mlx_create_image.c \
 	  mouse_click.c \
 	  keyboard.c \
+	  wall_collision.c \
+	  move_player.c \
 	  my_mlx_pixel_put.c \
 	  square_on_click.c 
 
