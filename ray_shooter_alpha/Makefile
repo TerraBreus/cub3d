@@ -16,6 +16,7 @@ SRC = \
 	  keyboard.c \
 	  wall_collision.c \
 	  move_player.c \
+	  shoot_ray.c \
 	  my_mlx_pixel_put.c \
 	  square_on_click.c 
 

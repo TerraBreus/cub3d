@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/24 17:45:50 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/24 18:26:44 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 #define DOWN 115
 #define RIGHT 100
 #define LEFT 97
+
+#define KEY_R 114
 
 #define RED      0xFF0000
 #define GREEN    0x00FF00
@@ -81,3 +83,4 @@ int		keyboard(int keycode, t_data *data);
 bool	wall_collision(int x, int y, t_data *data);
 void	move_player(float pos[2], int keycode, t_data *data);
 int		mouse_click(int keycode, int x, int y, t_data *data);
+void	shoot_ray(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx);
