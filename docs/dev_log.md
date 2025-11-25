@@ -92,3 +92,22 @@ LOOK!!!!
 <img width="408" height="234" alt="image" src="https://github.com/user-attachments/assets/c8b6b513-3907-4d61-b914-448a276f0407" />
 <img width="576" height="304" alt="image" src="https://github.com/user-attachments/assets/45014a6b-a36f-4fbb-b566-780b828c4c6e" />
 
+## 25-11
+Encountering a small bug with wall collision. There will be a small gap between the user and wall if moving DOWN or RIGHT. I think understand why (it checks the next cell even though it is on the border) but I think I will leave it.
+Apart from that, I fixed a small bug in wall collision for player movement
+
+Then there was also simple refactoring; separating functions to their own files. Looking back at my DDA algorithm, I start to wonder whether I can find the time and energy to write a tutorial/explanation for it.
+
+Now the big next thing is converting the rays to an actual 3D like image.
+
+I want to find a way so that *long rays appear small* and *short rays appear big*.
+
+From the top of my head that means:
+
+`screenlength = SOMECONSTANT * (1 / ray_length)`
+
+The biggest raylength will quite simply result in 0 pixels. But what if we divide by 0? What is the smallest ray length we are allowed? 
+And how big does that make the screenline?
+
+Then I want to draw them to the screen. Which means I have to split the line in two and have *one half shot up* and the *other half shot down*. 
+I want this so my lines all have the same middle. Otherwise it will look like a weird skyline.
