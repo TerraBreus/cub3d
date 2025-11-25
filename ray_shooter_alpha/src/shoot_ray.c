@@ -6,53 +6,30 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:21:55 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/24 18:44:38 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/25 09:32:28 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ray.h"
 
-int	out_of_bounds(int x, int y)
-{
-	if (x > (LINES - 1) || x < 0)
-	{
-		printf("x of bounds! x:%i\n", x);
-		return (1);
-	}
-	if (y > (LINES - 1) || y < 0)
-	{
-		printf("y out of bounds. y:%i\n", y);
-		return (1);
-	}
-	return (0);
-}
-
-int	detect_wall_vert(double dir, int x, int y, t_data *mlx)
+static int	detect_wall_vert(double dir, int x, int y, t_data *mlx)
 {
 	if (out_of_bounds(x, y))
 		return (0);
 	if (dir > 0)
-	{
 		return (mlx->map[x][y]);
-	}
 	else
-	{
 		return (mlx->map[x - 1][y]);
-	}	
 }
 
-int	detect_wall_hori(double dir, int x, int y, t_data *mlx)
+static int	detect_wall_hori(double dir, int x, int y, t_data *mlx)
 {
 	if (out_of_bounds(x, y))
 		return (0);
 	if (dir > 0)
-	{
 		return (mlx->map[x][y]);
-	}
 	else
-	{
 		return (mlx->map[x][y - 1]);
-	}	
 }
 
 double	calc_ray_length(double angle_r, double x, double y, t_data *mlx)
@@ -109,32 +86,19 @@ double	calc_ray_length(double angle_r, double x, double y, t_data *mlx)
 	return (result);
 }
 
-void	clean_rays(t_img *img)
-{
-	int	i;
-	int	j;
-
-	for (i = 0; i < WINDOWSIZE; i++)
-	{
-		for (j = 0; j < WINDOWSIZE; j++)
-			my_mlx_pixel_put(img, i, j, BLACK);
-	}
-}
-
 void	shoot_ray(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx)
 {
 	double		ray_length;
 	double		cell_size;
 	int			i;
 
-	clean_rays(img);
+	fill_img_with(BLACK, img);
 	cell_size = (double) WINDOWSIZE / LINES;
 	for (i = -45; i < 46; i++)
 	{
 		ray_length = calc_ray_length(((angle + i) / 180) * -M_PI, ((double) pix_x) / cell_size, ((double)  pix_y) / cell_size, mlx);
 		draw_line(img, angle + i, (int) (ray_length * cell_size), pix_x, pix_y, ORANGE);
 	}
-
 	render_window(mlx, true);
 }
 
