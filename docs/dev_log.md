@@ -111,3 +111,7 @@ And how big does that make the screenline?
 
 Then I want to draw them to the screen. Which means I have to split the line in two and have *one half shot up* and the *other half shot down*. 
 I want this so my lines all have the same middle. Otherwise it will look like a weird skyline.
+
+Omg would you look at that...
+<img width="962" height="352" alt="image" src="https://github.com/user-attachments/assets/84fde246-8538-4e52-9c74-50f57fd5d040" />
+
