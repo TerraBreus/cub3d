@@ -115,3 +115,16 @@ I want this so my lines all have the same middle. Otherwise it will look like a 
 Omg would you look at that...
 <img width="962" height="352" alt="image" src="https://github.com/user-attachments/assets/84fde246-8538-4e52-9c74-50f57fd5d040" />
 
+For debugging purposes I kind of want to have another screen to visualize the wolfenstein engine realtime while I can still see and move around in the map to create walls etc.
+
+So I want
+- add another screen that visualizes the wolfenstein engine.
+- add realtime movement to wolfenstein engine.
+- add direction to wolfenstein engine.
+
+After that I think we can honestly start the actual game.
+
+For that we (more or less) would need:
+- Map parsing (ugh...)
+- Textures to N/E/S/W side of walls
+- Sky and floor (texture)
