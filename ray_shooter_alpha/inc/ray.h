@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/24 18:26:44 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/25 09:32:28 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,3 +84,5 @@ bool	wall_collision(int x, int y, t_data *data);
 void	move_player(float pos[2], int keycode, t_data *data);
 int		mouse_click(int keycode, int x, int y, t_data *data);
 void	shoot_ray(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx);
+void	fill_img_with(int color, t_img *img);
+int	out_of_bounds(int x, int y);
