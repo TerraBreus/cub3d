@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:21:55 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/25 10:08:12 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/25 10:59:52 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,4 @@ void	shoot_ray(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx)
 	}
 	render_window(mlx, true);
 }
+
