@@ -9,6 +9,8 @@ SRC = \
 	  init_user.c \
 	  out_of_bounds.c \
 	  fill_img_with.c \
+	  calc_ray_length.c \
+	  wolfenstein.c \
 	  fill_square.c \
 	  init_data.c \
 	  init_grid.c \

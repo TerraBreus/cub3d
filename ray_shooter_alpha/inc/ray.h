@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/25 09:32:28 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/25 11:02:02 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define LINES 20
 #define USERSIZE 10
 #define MOVESPEED 4
+#define FOV 90
 
 #define BUTTONPRESS 04
 #define KEYPRESS 02
@@ -29,6 +30,7 @@
 #define LEFT 97
 
 #define KEY_R 114
+#define ENTER 65293
 
 #define RED      0xFF0000
 #define GREEN    0x00FF00
@@ -86,3 +88,5 @@ int		mouse_click(int keycode, int x, int y, t_data *data);
 void	shoot_ray(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx);
 void	fill_img_with(int color, t_img *img);
 int	out_of_bounds(int x, int y);
+double	calc_ray_length(double angle_r, double x, double y, t_data *mlx);
+void	wolfenstein(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx);
