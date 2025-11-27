@@ -14,6 +14,11 @@
 
 #include "../inc/ray.h"
 
+static void	toggle_wolfenstein(t_data *data)
+{
+	render_window(data, true);
+}
+
 int keyboard(int keycode, t_data *data)
 {
 	if (keycode == UP || keycode == DOWN || keycode == LEFT || keycode == RIGHT)
@@ -21,7 +26,7 @@ int keyboard(int keycode, t_data *data)
 	else if (keycode == KEY_R)
 		shoot_ray(&data->rays, 0, data->user.pos[0], data->user.pos[1],  data);
 	else if (keycode == ENTER)
-		wolfenstein(&data->rays, 0, data->user.pos[0], data->user.pos[1],  data);
+		toggle_wolfenstein(data);
 	else
 		printf("key:%i\n", keycode);
 	return (0);
