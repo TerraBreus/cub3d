@@ -7,6 +7,7 @@ SRC = \
 	  draw_line.c \
 	  render_window.c \
 	  turn_player.c \
+	  print_user_info.c \
 	  init_user.c \
 	  out_of_bounds.c \
 	  fill_img_with.c \
