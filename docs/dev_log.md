@@ -128,3 +128,16 @@ For that we (more or less) would need:
 - Map parsing (ugh...)
 - Textures to N/E/S/W side of walls
 - Sky and floor (texture)
+
+## 27-11
+Okay so I added movement and rotation. Instead of a second screen I created a toggle to switch between the minimap and the wolfenstein engine. It was all rather easy because I implemented an angle variable when writing the DDA algorithm.
+
+- Movement now is weird. It still acts like a top down game. I will need to take the direction into account so that when you move forward in the wolfenstein engine you move forward from your POV and not the map.
+- Color for depth! 
+- Also the ray currently has a limit on max\_length that gets drawn on screen bigger than what I want. I should do something in the calc\_ray\_length like `if (i > 20) raylength = inf`
+
+Added correct movement with direction taken into account.
+
+Not very happy with the code. It is more based on trial and error and looks (and feels) very finnicky, especially with the wall detection. Again it might have to do with which tile gets checked when on the border of a gridline. But it (sort of) works!
+
+
