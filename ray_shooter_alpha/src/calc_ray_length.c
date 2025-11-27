@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 10:06:46 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/25 10:08:12 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/27 17:34:47 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ double	calc_ray_length(double angle_r, double x, double y, t_data *mlx)
 	dx_dy[1] = -sin(angle_r);
 
 	int i = -1;
-	while (++i < 20)
+	while (++i < 30)
 	{
 		nxt_xy[0] = -1 * fmod(x, 1);
 		if (nxt_xy[0] == 0)
