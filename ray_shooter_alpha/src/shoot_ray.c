@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:21:55 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/25 10:59:52 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/27 11:14:14 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,6 @@ void	shoot_ray(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx)
 		ray_length = calc_ray_length(((angle + i) / 180) * -M_PI, ((double) pix_x) / cell_size, ((double)  pix_y) / cell_size, mlx);
 		draw_line(img, angle + i, (int) (ray_length * cell_size), pix_x, pix_y, ORANGE);
 	}
-	render_window(mlx, true);
+	mlx_put_image_to_window(mlx->mlx, mlx->mlx_win, mlx->rays.img, 0, 0);
 }
 
