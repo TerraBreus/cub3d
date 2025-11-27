@@ -30,6 +30,8 @@
 #define LEFT 97
 
 #define KEY_R 114
+#define KEY_E 101
+#define KEY_Q 113
 #define ENTER 65293
 
 #define RED      0xFF0000
