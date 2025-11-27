@@ -6,6 +6,7 @@ CFLAGS := -Werror -Wextra -Wall -Iinc -g
 SRC = \
 	  draw_line.c \
 	  render_window.c \
+	  turn_player.c \
 	  init_user.c \
 	  out_of_bounds.c \
 	  fill_img_with.c \
