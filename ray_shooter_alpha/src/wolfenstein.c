@@ -44,5 +44,4 @@ void	wolfenstein(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx)
 		draw_line(img, 90, screen_length / 2, i + (WINDOWSIZE / 2), (WINDOWSIZE / 2), WHITE);
 		draw_line(img, -90, screen_length / 2, i + (WINDOWSIZE / 2), (WINDOWSIZE / 2), WHITE);
 	}
-	render_window(mlx, true);
 }
