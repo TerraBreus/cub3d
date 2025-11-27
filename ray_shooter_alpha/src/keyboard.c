@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:17:53 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/27 11:08:47 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/11/27 11:14:58 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int keyboard(int keycode, t_data *data)
 	if (keycode == UP || keycode == DOWN || keycode == LEFT || keycode == RIGHT)
 		move_player(data->user.pos, keycode, data);
 	else if (keycode == KEY_R)
-		shoot_ray(&data->rays, 0, data->user.pos[0], data->user.pos[1],  data);
+		shoot_ray(&data->rays, data->user.direction, data->user.pos[0], data->user.pos[1],  data);
 	else if (keycode == ENTER)
 		toggle_wolfenstein(data);
 	else if (keycode == KEY_Q || keycode == KEY_E)
