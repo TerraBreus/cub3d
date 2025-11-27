@@ -29,6 +29,8 @@ int keyboard(int keycode, t_data *data)
 		toggle_wolfenstein(data);
 	else if (keycode == KEY_Q || keycode == KEY_E)
 		turn_player(&data->user.direction, keycode, data);
+	else if (keycode == KEY_P)
+		print_user_info(data);
 	else
 		printf("key:%i\n", keycode);
 	return (0);
