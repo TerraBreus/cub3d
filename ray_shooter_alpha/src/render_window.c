@@ -12,10 +12,21 @@
 
 #include "../inc/ray.h"
 
-void	render_window(t_data *data, bool ray)
+void	render_window(t_data *data, bool change_ray)
 {
+	static bool	ray = false;
+
+	if (change_ray == true)
+	{
+		if (ray == false)
+			ray = true;
+		else
+			ray = false;
+		printf("Change_ray has been switched to %b\n", change_ray);
+	}
 	if (ray == true)
 	{
+		wolfenstein(&data->rays, 0, data->user.pos[0], data->user.pos[1],  data);
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->rays.img, 0, 0);
 	}
 	else
