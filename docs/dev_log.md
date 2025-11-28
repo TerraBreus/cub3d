@@ -140,4 +140,21 @@ Added correct movement with direction taken into account.
 
 Not very happy with the code. It is more based on trial and error and looks (and feels) very finnicky, especially with the wall detection. Again it might have to do with which tile gets checked when on the border of a gridline. But it (sort of) works!
 
+## 28-11
+Added background with ceiling and floor. Quite easy by drawing in out before drawing the lines from the engine. 
+
+Color depth seems to be a bit more difficult as I want it to depend on the max iterations that the DDA algrotihm needed which forces me to change the code I think.
+
+(wait not that doesn't make sense. You can have many iterations and still have a short line if the ray just happened to pass alot of gridlines)
+
+I might need a structure like 
+```
+t_ray
+{
+    int length_in_pixels;
+    int color;
+}
+```
+
+Then I can also give the walls different colors depending on which side of the wall they hit.
 
