@@ -12,6 +12,23 @@
 
 #include "../inc/ray.h"
 
+void	create_background(t_img *img)
+{
+	int	i;
+	int	j;
+
+	for (i = 0; i < (WINDOWSIZE) - 1; i++)
+	{
+		for (j = 0; j < (WINDOWSIZE / 2) - 1; j++)
+			my_mlx_pixel_put(img, i, j, BLUE);
+	}
+	for (i = 0; i < (WINDOWSIZE) - 1; i++)
+	{
+		for (j = (WINDOWSIZE / 2) - 1; j < (WINDOWSIZE) - 1; j++)
+			my_mlx_pixel_put(img, i, j, GRAY);
+	}
+}
+
 static int convert_to_vert_line(double ray_length)
 {
 	int	some_fact;
@@ -33,7 +50,7 @@ void	wolfenstein(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx)
 	int			screen_length;
 	int			i;
 
-	fill_img_with(BLACK, img);
+	create_background(img);
 	dr = (double) (FOV) / WINDOWSIZE;
 	cell_size = (double) WINDOWSIZE / LINES;
 	for (i = -(WINDOWSIZE / 2); i < (WINDOWSIZE / 2) - 1; i++)
