@@ -158,3 +158,17 @@ t_ray
 
 Then I can also give the walls different colors depending on which side of the wall they hit.
 
+## 30-11
+Ugh... with my tail tucked between my legs I go back to the drawing board. For some reason, I'm annoyed by this so progress will probably go a bit slower for a while. Learning new things always takes more time and this is probably the most useful and essential tool of becoming a better programmer. Learning new concepts are like cleaning a really messy room. It can feel overwhelming and difficult to find a good starting points, but the only way to make progress is by doing it. If you pick up a few clothes everyday, you'll soon find the room much easier to clean. So, don't tell yourself you have to understand a topic, **try** to understand it. You may fall asleep, or get annoyed or feel stupid or whatever but one thing is for certain: _You will never understand new concepts if you never make an effort to understand them..._
+
+###### With all that said and done, let's get drawing.
+Adding textures seems difficult and I'm unsure whether I understand [this tutorial](https://lodev.org/cgtutor/raycasting.html#Textured_Raycaster). Perhaps gathering more information will help clarify things but for now, this is what I got from it:
+- find out where the wall was hit on the gridline. If we hit a wall (positioned at map[15][15]) horizontally and exactly in the middle (so y = 15.5 and x = 15). That means we will need the middle vertical line of the corresponding texture.
+- Translate that to the corresponding x-value of the texture.
+- By calculating the length of the y-line, you can also translate the corresponding y-value of the texture (you can, just to test, also skip this for now and do a texture that has a different color for every x-value, but remains the same along the y-values)
+<img width="1752" height="1008" alt="image" src="https://github.com/user-attachments/assets/f8163f0b-c4df-4cf3-a3ae-aa5625869530" />
+
+**Something else I realised from this tutorial is that the maker removed his fisheye effect by having a plane instead of a point.**
+<img width="1410" alt="image" src="https://github.com/user-attachments/assets/87557c4a-2957-49d6-88c4-e1f0bc1a7db1" />
+
+I don't know what he does when the box is in fron of the plane. Maybe then you don't have to correct it and you can just use the total length (in red on the image above).
