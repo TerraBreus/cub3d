@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/27 17:32:46 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/01 12:39:06 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,13 @@ typedef struct	s_img {
 	int		endian;
 }			t_img;
 
+typedef struct s_tex {
+	t_img	img;
+	int		width;
+	int		height;
+	char	*path;
+}	t_tex;
+
 typedef struct s_user {
 	t_img	img;
 	float	pos[2];
@@ -69,6 +76,7 @@ typedef struct s_data {
 	void	*mlx_win;
 	t_img	grid;
 	t_img	rays;
+	t_tex	tex;
 	t_user	user;
 	int		map[LINES][LINES];
 }			t_data;
@@ -96,3 +104,4 @@ double	calc_ray_length(double angle_r, double x, double y, t_data *mlx);
 void	wolfenstein(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx);
 void	turn_player(float *dir, int keycode, t_data *data);
 void	print_user_info(t_data *data);
+void	init_tex(t_data *data);

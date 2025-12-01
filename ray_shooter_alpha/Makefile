@@ -6,6 +6,7 @@ CFLAGS := -Werror -Wextra -Wall -Iinc -g
 SRC = \
 	  draw_line.c \
 	  render_window.c \
+	  init_tex.c \
 	  turn_player.c \
 	  print_user_info.c \
 	  init_user.c \
