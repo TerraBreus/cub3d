@@ -177,3 +177,5 @@ I don't know what he does when the box is in fron of the plane. Maybe then you d
 Progress is going to be slow. I absolutely hate this and my life feels miserable. I feel stupid and lazy.
 
 Added the `mlx_xpm_file_to_image()` to `init_tex()`. Now that we have our image, we should be able to start altering our DDA algorithm however I much rather prefer to smoke weed at this point so I think I need to chill for a sec and do something else... 
+
+Trying to implement stuff but honestly, I think I might have to rewrite the wolfenstein and DDA algorithm for this. Another time I say!
