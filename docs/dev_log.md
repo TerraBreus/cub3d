@@ -172,3 +172,8 @@ Adding textures seems difficult and I'm unsure whether I understand [this tutori
 <img width="1410" alt="image" src="https://github.com/user-attachments/assets/87557c4a-2957-49d6-88c4-e1f0bc1a7db1" />
 
 I don't know what he does when the box is in fron of the plane. Maybe then you don't have to correct it and you can just use the total length (in red on the image above).
+
+## 01-12
+Progress is going to be slow. I absolutely hate this and my life feels miserable. I feel stupid and lazy.
+
+Added the `mlx_xpm_file_to_image()` to `init_tex()`. Now that we have our image, we should be able to start altering our DDA algorithm however I much rather prefer to smoke weed at this point so I think I need to chill for a sec and do something else... 
