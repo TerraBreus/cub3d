@@ -179,3 +179,9 @@ Progress is going to be slow. I absolutely hate this and my life feels miserable
 Added the `mlx_xpm_file_to_image()` to `init_tex()`. Now that we have our image, we should be able to start altering our DDA algorithm however I much rather prefer to smoke weed at this point so I think I need to chill for a sec and do something else... 
 
 Trying to implement stuff but honestly, I think I might have to rewrite the wolfenstein and DDA algorithm for this. Another time I say!
+
+## 03-12
+<p align="left">Continuing on the idea that I will have to rewrite the whole thing (well... the engine). Might as well start working on the "beta" version where I try to implement Norminette standards and a Map parser. Though, come to think of it. If I can try to implement this in the current version, I can be a lot surer of myself when writing the school version. 
+
+Anyway, this is what I came up with when brainstorming on the engine. I think this should be doable in a day or two. </p>
+<img align="center" width="50%" alt="texture_renderer_flowchart_cub3d" src="https://github.com/user-attachments/assets/502c6202-af61-4f75-be3d-678eebc503d4" />
