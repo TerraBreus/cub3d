@@ -184,4 +184,7 @@ Trying to implement stuff but honestly, I think I might have to rewrite the wolf
 <p align="left">Continuing on the idea that I will have to rewrite the whole thing (well... the engine). Might as well start working on the "beta" version where I try to implement Norminette standards and a Map parser. Though, come to think of it. If I can try to implement this in the current version, I can be a lot surer of myself when writing the school version. 
 
 Anyway, this is what I came up with when brainstorming on the engine. I think this should be doable in a day or two. </p>
+
+## 04-12
+Not overthinking things and just getting started implementing yesterdays plan into actual code. Doesn't look like much but it's a start. This is how progress happens. Don't beat yourself up and see if you can wotk on it a little when you have the time.
 <img align="center" width="50%" alt="texture_renderer_flowchart_cub3d" src="https://github.com/user-attachments/assets/502c6202-af61-4f75-be3d-678eebc503d4" />
