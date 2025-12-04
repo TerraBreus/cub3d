@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 16:53:38 by zivanov           #+#    #+#             */
-/*   Updated: 2025/11/27 16:57:17 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/04 09:45:30 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ void	print_user_info(t_data *data)
 			data->user.pos[0], 
 			data->user.pos[1], 
 			data->user.direction);
+	wolfenstein_tex(&data->tex, &data->rays, data, &data->user);
 }
