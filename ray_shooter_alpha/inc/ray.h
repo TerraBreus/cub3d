@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/01 12:39:06 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/04 09:45:30 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,20 @@
 #define PINK     0xFFC0CB
 #define BROWN    0x8B4513
 #define GRAY     0x808080
+
+typedef enum e_side{
+	NORTH,
+	SOUTH,
+	WEST,
+	EAST
+}	e_side;
+
+typedef struct	s_ray {
+	double	ray_length;
+	int		pixel_length;
+	e_side	side;
+	double	pos_wall_hit;
+}	t_ray;
 
 typedef struct	s_img {
 	void	*img;
@@ -105,3 +119,4 @@ void	wolfenstein(t_img *img, double angle, int  pix_x, int pix_y, t_data *mlx);
 void	turn_player(float *dir, int keycode, t_data *data);
 void	print_user_info(t_data *data);
 void	init_tex(t_data *data);
+void	wolfenstein_tex(t_tex *tex, t_img *img, t_data *data, t_user *user);
