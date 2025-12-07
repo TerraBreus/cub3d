@@ -23,16 +23,16 @@ unsigned int	get_pixel_color(t_img *data, int x, int y)
 void	draw_tex_line(t_img *img, t_tex *tex, t_ray *ray, int i)
 {
 	int		which_line;
-	int		step_size;
+	double		step_size;
 	int		j;
 	unsigned int	temp;
 	
 	which_line = ray->pos_wall_hit * tex->width;
-	step_size = tex->height / ray->pixel_length;
+	step_size = (double) tex->height / ray->pixel_length;
 
 	for (j = -(ray->pixel_length / 2); j < (ray->pixel_length / 2); j++)
 	{
-		temp = get_pixel_color(&tex->img, which_line, (j + (ray->pixel_length / 2)) * step_size);
+		temp = get_pixel_color(&tex->img, which_line,(int) (j + ((double) ray->pixel_length / 2)) * step_size);
 		my_mlx_pixel_put(img, i, (WINDOWSIZE / 2) + j, temp);
 	}
 }
