@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 09:18:58 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/04 09:45:30 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/07 17:07:53 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,3 +120,5 @@ void	turn_player(float *dir, int keycode, t_data *data);
 void	print_user_info(t_data *data);
 void	init_tex(t_data *data);
 void	wolfenstein_tex(t_tex *tex, t_img *img, t_data *data, t_user *user);
+void	calc_ray_with_tex(t_ray *ray, double angle, double x, double y, t_data *data);
+void	draw_tex_line(t_img *img, t_tex *tex, t_ray *ray, int i);

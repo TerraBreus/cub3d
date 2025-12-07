@@ -13,6 +13,8 @@ SRC = \
 	  out_of_bounds.c \
 	  fill_img_with.c \
 	  calc_ray_length.c \
+	  calc_ray_with_tex.c \
+	  draw_tex_line.c	\
 	  wolfenstein_tex.c \
 	  wolfenstein.c \
 	  fill_square.c \
