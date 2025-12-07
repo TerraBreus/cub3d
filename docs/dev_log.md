@@ -188,3 +188,6 @@ Anyway, this is what I came up with when brainstorming on the engine. I think th
 ## 04-12
 Not overthinking things and just getting started implementing yesterdays plan into actual code. Doesn't look like much but it's a start. This is how progress happens. Don't beat yourself up and see if you can wotk on it a little when you have the time.
 <img align="center" width="50%" alt="texture_renderer_flowchart_cub3d" src="https://github.com/user-attachments/assets/502c6202-af61-4f75-be3d-678eebc503d4" />
+
+## 07-12
+Ok ok ok, don't be mad. Something is happening but this shit is tricky as fuck and after an hour my brain is farting like crazy. We get something though its very tricky to say what that something is.
