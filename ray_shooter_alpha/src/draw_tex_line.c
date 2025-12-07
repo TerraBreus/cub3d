@@ -30,7 +30,7 @@ void	draw_tex_line(t_img *img, t_tex *tex, t_ray *ray, int i)
 	which_line = ray->pos_wall_hit * tex->width;
 	step_size = tex->height / ray->pixel_length;
 
-	for (j = 0; j < (ray->pixel_length / 2); j++)
+	for (j = -(ray->pixel_length / 2); j < (ray->pixel_length / 2); j++)
 	{
 		temp = get_pixel_color(&tex->img, which_line, (j + (ray->pixel_length / 2)) * step_size);
 		my_mlx_pixel_put(img, i, (WINDOWSIZE / 2) + j, temp);
