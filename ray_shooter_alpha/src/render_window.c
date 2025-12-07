@@ -26,8 +26,8 @@ void	render_window(t_data *data, bool change_ray)
 	}
 	if (ray == true)
 	{
-		wolfenstein(&data->rays, data->user.direction, data->user.pos[0], data->user.pos[1],  data);
-		//wolfenstein_tex();
+		//wolfenstein(&data->rays, data->user.direction, data->user.pos[0], data->user.pos[1],  data);
+		wolfenstein_tex(&data->tex, &data->rays, data, &data->user);
 		mlx_put_image_to_window(data->mlx, data->mlx_win, data->rays.img, 0, 0);
 	}
 	else
