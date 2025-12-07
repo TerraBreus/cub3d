@@ -191,3 +191,13 @@ Not overthinking things and just getting started implementing yesterdays plan in
 
 ## 07-12
 Ok ok ok, don't be mad. Something is happening but this shit is tricky as fuck and after an hour my brain is farting like crazy. We get something though its very tricky to say what that something is.
+
+[... some of the devlog got lost due to force pushing...]
+
+I worked through it and it looks alright now. I believe the grid image doesn't work too well cause it has too many pixels and too little definition so the gridlines look weird and wonky. If we take a lower resulution image we get something like this:
+
+<img width="985" height="320" alt="image" src="https://github.com/user-attachments/assets/fbcfda3d-ed5b-4f82-908e-fae68d99d1e6" />
+
+Some of the rendering looks wonky at times (especially when moving around). Some weird screen tearing I believe. Maybe this can be resolved by removing the fish-eye effect but I think most of it is due to the integer `step_size` skipping over various amount of pixels... oh... I just fixed it and that seemed to work.
+
+Hmm yeah it works!!!! TIme to begin the real deal I guess.
