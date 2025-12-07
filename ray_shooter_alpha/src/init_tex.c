@@ -19,14 +19,12 @@ void	my_mlx_get_data_addr(t_img *img)
 
 void	init_tex(t_data *data)
 {
-	data->tex.img.img = mlx_xpm_file_to_image(data->mlx, "./textures/5x5grid.xpm", &data->tex.width, &data->tex.height);
+	data->tex.img.img = mlx_xpm_file_to_image(data->mlx, "./textures/cobble_wall.xpm", &data->tex.width, &data->tex.height);
 	if (data->tex.img.img == NULL)
 		printf("something went wrong with loading textures\n");
 	else
 	{
 		my_mlx_get_data_addr(&data->tex.img);
-		mlx_put_image_to_window(data->mlx, data->mlx_win, data->tex.img.img, 0, 0);
-		printf("Render of texture to be used. Width: %i, Height: %i\nPress enter in terminal to continue game\n", data->tex.width, data->tex.height);
-		scanf("aha");
+		printf("Render of texture to be used. Width: %i, Height: %i\n", data->tex.width, data->tex.height);
 	}
 }
