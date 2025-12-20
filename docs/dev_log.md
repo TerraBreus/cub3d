@@ -201,3 +201,19 @@ I worked through it and it looks alright now. I believe the grid image doesn't w
 Some of the rendering looks wonky at times (especially when moving around). Some weird screen tearing I believe. Maybe this can be resolved by removing the fish-eye effect but I think most of it is due to the integer `step_size` skipping over various amount of pixels... oh... I just fixed it and that seemed to work.
 
 Hmm yeah it works!!!! TIme to begin the real deal I guess.
+
+## 20-12
+The real deal. 
+
+I'm not sure where to start. Currently I'm looking at what I got already and thinking about what I need to change. A lot of stuff I will simply have to rewrite so it fits the school42 standards (norminette & while loops instead of for loops). And stuff will now need to be checked for errors and exit cleanly. I also will have to change the code so that the window can be increased in size. Quite a lot it seems! However it seems most important I start with understanding what I will get from Joanna after her parsing and that I write down some brainstorm thoughts.
+
+I still see some weird texture error bugs where sometimes the lines are blacked out. Also the fisheye effect is still here. Those are two things I want gone I guess.
+
+Looking at Michmos' repository I realize I have quite a big journey ahead of me still. My textures look much worse and my game doesn't nearly run as smooth as his. Trying to keep it positive I guess the good news is there is a lot to learn still!
+
+Stuff is overwhelming. I need to think small. What can I do today that will help me tomorrow?
+
+- I can try to initialize my window and have it be resizeable, printing the dimensions to the terminal.
+- I can take another look at my ray tracer and try to outline the train of thought by rewriting in pseudocode.
+- I can hardcode a map for me to start working with.
+- I can write a makefile that downloads and compiles a specific version of the minilibx for me to work with.
