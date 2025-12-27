@@ -217,3 +217,6 @@ Stuff is overwhelming. I need to think small. What can I do today that will help
 - I can take another look at my ray tracer and try to outline the train of thought by rewriting in pseudocode.
 - I can hardcode a map for me to start working with.
 - I can write a makefile that downloads and compiles a specific version of the minilibx for me to work with.
+
+## 27-12
+Wrote the Makefile so that I can start initializing. Rough start but a start nonetheless. Sometimes I simply have to remind myself that what I'm doing might not feel like actual progress (or it is very slow, finnicky and tedious) but I am helping the next version of myself who will sit down and start writing code.
