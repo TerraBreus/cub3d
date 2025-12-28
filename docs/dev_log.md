@@ -227,3 +227,7 @@ AAAARGH I'm just writing code without having overview of the entire project. I r
 Just trying to make steps towards writing the raycaster. Creating structures, initializing data (naming seems to be difficult here) and trying to handle errors in init part so I can clean up nicely incase of errors. Not handling specific error codes yet which I might still have to do?
 
 I realize I will have to use movement with `get_time_of_day()` to implement smooth movement independent from framerate. This will most likely only be important when hooking events but it is something to keep in mind.
+
+Created a simple map to work with for raytracing.
+
+The smartest thing to do next would be to create the first image with the raytracing. This will be a big chunk and should probably be split into smaller chunks. Again I think the smartest thing to do is to first create a function that "shoots a ray" and returns the distance from the player to the wall. This function needs a position (where the ray will be shot from) and a direction (where the ray is travelling towards). This will also require me to know what the dimension of a single grid spot is (I think just a range from 1 to 2) and a wall collision detector. 
