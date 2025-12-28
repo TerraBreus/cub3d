@@ -6,11 +6,19 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:57:38 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/28 11:55:01 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/28 12:00:29 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
+
+static char **create_test_map()
+{
+	char	**result;
+
+	//Testing map to start raycasting with.
+	return (result);
+}
 
 int	main(void)
 {
