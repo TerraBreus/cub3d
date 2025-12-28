@@ -6,23 +6,47 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 11:09:49 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/28 11:27:18 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/28 11:45:55 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-int	init_data(t_data *data)
-{
+/*
+ * init for mlx_data to split the main init function.
+ * creating:
+ * 		- mlx_window
+ * 		- mlx pointer
+ * 		- setting window size
+*/
 
-	data->mlx = mlx_init();
-	if (data->mlx == NULL)
+static int	init_mlx_data(t_mlx_data *d)
+{
+	d->mlx = mlx_init();
+	if (d->mlx == NULL)
 		return (-1);
-	data->mlx_win = mlx_new_window(data->mlx, WINDOWLENGTH, WINDOWHEIGHT, "cub3d");
-	if (data->mlx_win == NULL)
+	d->win_h = WINDOWHEIGHT;
+	d->win_l = WINDOWLENGTH;
+	d->mlx_win = mlx_new_window(d->mlx, d->win_l, d->win_h, "cub3d");
+	if (d->mlx_win == NULL)
 	{
-		mlx_destroy_display(data->mlx);
+		mlx_destroy_display(d->mlx);
 		return (-1);
 	}
+	return (0);
+}
+
+/*
+ * Main initialization of all data for execution part.
+ * This includes:
+ * 		creation of mlx pointer.
+ * 		creation of mlx_win pointer.
+ * 		creation of mlx images to push to screen.
+*/
+
+int	init_data(t_mlx_data *data)
+{
+	if (init_mlx_data(data) != 0)
+		return (-1);
 	return (0);
 }
