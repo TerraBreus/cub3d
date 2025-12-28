@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 11:07:29 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/28 13:38:58 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/28 13:54:35 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,4 @@ typedef struct s_input
 }	t_input;
 
 int		init_data(t_mlx_data *data);
+char	**create_square_test_map(int size);

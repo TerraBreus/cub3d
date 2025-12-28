@@ -6,19 +6,13 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:57:38 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/28 12:00:29 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/28 13:54:57 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-static char **create_test_map()
-{
-	char	**result;
 
-	//Testing map to start raycasting with.
-	return (result);
-}
 
 int	main(void)
 {
@@ -27,6 +21,8 @@ int	main(void)
 
 	if (init_data(&mlx_data) != 0)
 		return (-1);
+	//TEST MAP MUST BE REMOVED LATER ON!
+	input.map = create_square_test_map(10);
 	//hook_events();
 	mlx_loop(mlx_data.mlx);
 	//clean_up();
