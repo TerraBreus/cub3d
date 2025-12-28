@@ -1,6 +1,6 @@
 NAME := cub3d
 CC := cc
-CFLAGS := -Wall -Werror -Wextra
+CFLAGS := -Wall -Werror -Wextra -g
 LFLAGS := -
 
 MLX_REPO := https://github.com/42paris/minilibx-linux
@@ -8,7 +8,8 @@ MLX_PATH := ./mlx
 MLX := $(MLX_PATH)/libmlx_Linux.a -lXext -lX11 -lm -lz
 
 SRC := \
-	   main.c
+	   main.c	\
+	   init_data.c
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
