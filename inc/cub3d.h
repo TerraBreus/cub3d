@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 11:07:29 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/28 11:57:40 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/28 13:38:58 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,20 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#define WINDOWHEIGHT 1080
 #define WINDOWLENGTH 1920
+#define WINDOWHEIGHT 1080
 
 /*
- * Simple structure for mlx data.
+ * Simple structure holding relevant data
+ * for the graphical library mlx.
+ * 
+ * Main usage of the library is
+ * the creation and maintenance 
+ * of windows, events and images
+
+ * More info on this library can be found
+ * in the mlx/mlx.h header.
+ *
  * The win_h and win_l parameters
  * are for future resizing of windows.
  * This is not a subject requirement,
