@@ -220,3 +220,10 @@ Stuff is overwhelming. I need to think small. What can I do today that will help
 
 ## 27-12
 Wrote the Makefile so that I can start initializing. Rough start but a start nonetheless. Sometimes I simply have to remind myself that what I'm doing might not feel like actual progress (or it is very slow, finnicky and tedious) but I am helping the next version of myself who will sit down and start writing code.
+
+## 28-12
+AAAARGH I'm just writing code without having overview of the entire project. I really hope this won't bite me in the ass though it probably will. 
+
+Just trying to make steps towards writing the raycaster. Creating structures, initializing data (naming seems to be difficult here) and trying to handle errors in init part so I can clean up nicely incase of errors. Not handling specific error codes yet which I might still have to do?
+
+I realize I will have to use movement with `get_time_of_day()` to implement smooth movement independent from framerate. This will most likely only be important when hooking events but it is something to keep in mind.
