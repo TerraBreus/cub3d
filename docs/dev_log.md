@@ -231,3 +231,46 @@ I realize I will have to use movement with `get_time_of_day()` to implement smoo
 Created a simple map to work with for raytracing.
 
 The smartest thing to do next would be to create the first image with the raytracing. This will be a big chunk and should probably be split into smaller chunks. Again I think the smartest thing to do is to first create a function that "shoots a ray" and returns the distance from the player to the wall. This function needs a position (where the ray will be shot from) and a direction (where the ray is travelling towards). This will also require me to know what the dimension of a single grid spot is (I think just a range from 1 to 2) and a wall collision detector. 
+
+## 29-12
+Notes from Johanna:
+```
+//t_textures stores paths to 4 wall textures (NO, SO, WE, EA)
+
+typedef struct s_textures
+{
+	char	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+}	t_textures;
+
+// t_colors: Stores RGB values for floor and ceiling (separate r, g, b ints)
+typedef struct s_colors
+{
+	int	r;
+	int	g;
+	int	b;
+}	t_colors;
+
+// t_map: Stores map grid as char** array, dimensions, and player position
+typedef struct s_map
+{
+	char	**	grid;
+	int		x_row;
+	int		y_col;
+	int		player_x;
+	int		player_y;
+	char		player_dir;
+}	t_map;
+
+// t_cub3d: Main structure containing all parsed data and metadata flags
+typedef struct s_cub3d
+{
+	t_textures	textures;
+	t_colors		floor;
+	t_colors		ceiling;
+	t_map		map;
+	int			metadata_flags;
+}	t_cub3d;
+```
