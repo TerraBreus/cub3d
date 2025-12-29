@@ -274,3 +274,5 @@ typedef struct s_cub3d
 	int			metadata_flags;
 }	t_cub3d;
 ```
+
+I am very tired and hungover today so no big ballsy moves today. spent most of my time thinking about my nvim setup however it sparked some energy for aesathetics and readability so I wrote some descriptions and aesthetics for the cub3d.h file. Also added X11 events for mlx_hook() which I will get into more next time.
