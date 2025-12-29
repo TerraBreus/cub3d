@@ -234,7 +234,7 @@ The smartest thing to do next would be to create the first image with the raytra
 
 ## 29-12
 Notes from Johanna:
-```
+``` c
 //t_textures stores paths to 4 wall textures (NO, SO, WE, EA)
 
 typedef struct s_textures
