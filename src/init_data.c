@@ -20,7 +20,7 @@
  * 		- setting window size
 */
 
-static int	init_mlx_data(t_mlx_data *d)
+static int	init_mlx_data(t_mlx *d)
 {
 	d->instance = mlx_init();
 	if (d->instance == NULL)
@@ -44,7 +44,7 @@ static int	init_mlx_data(t_mlx_data *d)
  * 		creation of mlx images to push to screen.
 */
 
-int	init_data(t_mlx_data *data)
+int	init_data(t_mlx *data)
 {
 	if (init_mlx_data(data) != 0)
 		return (-1);

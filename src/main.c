@@ -16,13 +16,13 @@
 
 int	main(void)
 {
-	t_mlx_data	mlx_data;
-	t_input		input;
+	t_mlx	mlx_data;
+	t_level		level;
 
 	if (init_data(&mlx_data) != 0)
 		return (-1);
 	//TEST MAP MUST BE REMOVED LATER ON!
-	input.map = create_square_test_map(10);
+	level.map = create_square_test_map(10);
 	//hook_events();
 	mlx_loop(mlx_data.instance);
 	//clean_up();
