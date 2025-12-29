@@ -15,8 +15,43 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
+// - - - - M A C R O S - - - -
+// - - - - - - - - - - - - - -
+// (basically constant global variables)
+
+// Some can be changed to reconfigure certain aspects of the game.
+// NOTE: This will require a rebuild.
+
+// Dimensions of the window for the game.
 #define WINDOWLENGTH 1920
 #define WINDOWHEIGHT 1080
+
+// --- --- --- E N U M S --- --- --- ---
+// - - - - - - - - - - - - - - - - - - -
+// (the bridge between readable
+// 		and executable code)
+
+/*
+ * X11 Events with their corresponding values.
+ * They are used to identify what kind of 
+ * event is triggered in the mlx_hook() function.
+ * (see hook_events.c)
+ * for more documentation see:
+ * https://harm-smits.github.io/42docs/libs/minilibx/events.html
+*/
+
+enum
+{
+	ON_KEYDOWN = 2,
+	ON_KEYUP = 3,
+	ON_MOUSEMOVE = 6,
+	ON_DESTROY = 17
+};
+
+// --- --- --- S T R U C T U R E S --- --- ---
+// - - - - - - - - - - - - - - - - - - - - - -
+// (because we can't pass a hundred
+// 		parameters to a function)
 
 /*	-- MLX STRUCTURE --
  * Simple structure holding relevant data
@@ -63,6 +98,13 @@ typedef struct s_level
 }	t_level;
 
 //--- --- --- F U N C T I O N S --- --- ---
+//- - - - - - - - - - - - - - - - - - - - -
+// (prototypes and descriptions of
+// 		all nonstatic functions)
+// 	NB: If no description is given assume
+// 		its usage is considered very
+// 		straightforward or the developer
+// 		was too lazy...
 
 //ALL data for the executive part gets initialized here. Most of the stuff
 //is mlx related and can probably use better naming.
