@@ -37,8 +37,8 @@
 
 typedef struct s_mlx_data
 {
-	void	*mlx;
-	void	*mlx_win;
+	void	*instance;
+	void	*window;
 	int		win_h;
 	int		win_l;
 }	t_mlx_data;

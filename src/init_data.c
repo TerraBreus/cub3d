@@ -22,15 +22,15 @@
 
 static int	init_mlx_data(t_mlx_data *d)
 {
-	d->mlx = mlx_init();
-	if (d->mlx == NULL)
+	d->instance = mlx_init();
+	if (d->instance == NULL)
 		return (-1);
 	d->win_h = WINDOWHEIGHT;
 	d->win_l = WINDOWLENGTH;
-	d->mlx_win = mlx_new_window(d->mlx, d->win_l, d->win_h, "cub3d");
-	if (d->mlx_win == NULL)
+	d->window = mlx_new_window(d->instance, d->win_l, d->win_h, "cub3d");
+	if (d->window == NULL)
 	{
-		mlx_destroy_display(d->mlx);
+		mlx_destroy_display(d->instance);
 		return (-1);
 	}
 	return (0);

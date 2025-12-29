@@ -24,7 +24,7 @@ int	main(void)
 	//TEST MAP MUST BE REMOVED LATER ON!
 	input.map = create_square_test_map(10);
 	//hook_events();
-	mlx_loop(mlx_data.mlx);
+	mlx_loop(mlx_data.instance);
 	//clean_up();
 	return (0);
 }
