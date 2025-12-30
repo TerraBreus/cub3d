@@ -10,7 +10,8 @@ MLX := $(MLX_PATH)/libmlx_Linux.a -lXext -lX11 -lm -lz
 SRC := \
 	   main.c \
 	   init_data.c \
-	   mock_parser.c
+	   mock_parser.c \
+	   hook_events.c
 
 OBJ = $(addprefix obj/, $(SRC:.c=.o))
 
