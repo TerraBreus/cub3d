@@ -12,18 +12,16 @@
 
 #include "../inc/cub3d.h"
 
-
-
 int	main(void)
 {
 	t_mlx	mlx_data;
-	t_level		level;
+	t_cub3d	cub3d;
 
 	if (init_data(&mlx_data) != 0)
 		return (-1);
 	//TEST MAP MUST BE REMOVED LATER ON!
-	level.map = create_square_test_map(10);
 	//hook_events();
+	mock_parser(&cub3d);
 	mlx_loop(mlx_data.instance);
 	//clean_up();
 	return (0);
