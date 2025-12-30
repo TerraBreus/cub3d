@@ -40,13 +40,29 @@
  * https://harm-smits.github.io/42docs/libs/minilibx/events.html
 */
 
-enum
+typedef enum e_events
 {
 	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
 	ON_MOUSEMOVE = 6,
 	ON_DESTROY = 17
-};
+}	t_events;
+
+/*
+ * To make the texture structure more readable
+ * we use a simple enum to keep track of
+ * which side of the cube we are talking about.
+ * Usage would be:
+ * cub3d->textures.paths[NO];
+*/
+
+typedef enum e_dir
+{
+	NO = 0,
+	EA = 1,
+	SO = 2,
+	WE = 3
+}	t_dir;
 
 // --- --- --- S T R U C T U R E S --- --- ---
 // - - - - - - - - - - - - - - - - - - - - - -
@@ -79,10 +95,9 @@ typedef struct s_mlx
 }	t_mlx;
 
 /*	-- LEVEL STRUCTURE --
- * All the necessary information from parsing.
+ * Metadata of the level given from the parser.
  * Should contain:
  * 		- The map.
- * 		- Texture pathnames.
  * 		- Starting position player
  * 		- Colors for Floor & ceiling
 */
@@ -96,6 +111,62 @@ typedef struct s_level
 	int		player_pos_y;
 	int		player_dir_deg;
 }	t_level;
+
+/*
+ * -- TEXTURE STRUCTURE --
+ *  Paths will be given by parsing.
+ *  Execution will create the mlx image structures.
+ *  This can be considered part of the mlx structure,
+ *  yet this was purposely avoided to make a
+ *  distinction between the mlx instance and the mlx images.
+ *
+ *  This structure makes use of the t_dir enums and can be used
+ *  as following: textures.paths[NO/EA/SO/WE] and
+ *  similarly textures.mlx_img[NO/EA/SO/WE]
+*/
+
+typedef struct s_textures
+{
+	char	*paths[4];
+	void	*mlx_img[4];
+}	t_textures;
+
+/*
+ * -- COLOR STRUCTURE --
+ *  In essence this is a simple array of three integers
+ *  yet to avoid the confusion of pointers and arrays
+ *  a decision was made to use a separate structure.
+ *
+ *  This makes parsing colors as a parameter easier and more readable.
+ *  Instead of `some_func(int colors[3]);`
+ *  (above can be confusing when using pointers and arrays combined)
+ *  we can use `some_func(t_colors *colors);`
+ *  (this is a pointer and not an array)
+*/
+
+typedef struct s_color
+{
+	int	r;
+	int	g;
+	int	b;
+}	t_colors;
+
+/*
+ * -- CUB3D STRUCTURE --
+ *  A big meta structure that holds all the
+ *  data needed for the cub3d program to run.
+ *  Most structures have their descriptions given
+ *  in the comments above.
+*/
+
+typedef struct s_cub3d
+{
+	t_textures	texture;
+	t_colors	floor;
+	t_colors	ceiling;
+	t_mlx		mlx_data;
+	t_level		level;
+}	t_cub3d;
 
 //--- --- --- F U N C T I O N S --- --- ---
 //- - - - - - - - - - - - - - - - - - - - -
@@ -111,5 +182,5 @@ typedef struct s_level
 //handles the instance of mlx, the window pointer, the image creation.
 int		init_data(t_mlx *data);
 
-//Simple map creater ONLY FOR TESTING WITHOUT PARSING READY
-char	**create_square_test_map(int size);
+//ONLY FOR TESTING WITHOUT PARSING READY
+void	mock_parser(t_cub3d *cub3d);
