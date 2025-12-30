@@ -50,7 +50,7 @@ static char	*middle_row(int size)
 	return (result);
 }
 
-char	**create_square_test_map(int size)
+static char	**create_square_test_map(int size)
 {
 	char	**result;
 	int		i;
@@ -74,4 +74,9 @@ char	**create_square_test_map(int size)
 	for (i = 0; i < size; i++)
 		printf("%s\n", result[i]);
 	return (result);
+}
+
+void	mock_parser(t_cub3d *data)
+{
+	data->level.map = create_square_test_map(10);
 }
