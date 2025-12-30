@@ -276,3 +276,5 @@ typedef struct s_cub3d
 ```
 
 I am very tired and hungover today so no big ballsy moves today. spent most of my time thinking about my nvim setup however it sparked some energy for aesathetics and readability so I wrote some descriptions and aesthetics for the cub3d.h file. Also added X11 events for mlx_hook() which I will get into more next time.
+## 30-12
+Pffff another day of what seems like small progress. But I actually did alot! I wrote alot of descriptions and refactored much of the header for readability. I also learned a bit about masking and events from the X11 library which admittedly is still very daunting and confusing. I have some ideas on how to make movement smoother (which I haven't developed yet) but when pressing a key you usually get `a` (pause) `aaaaaaaaaaaaaaaaaaaa` which will make movement feel janky. I can fix this by having an event once the key is pressed and once the key is released and having a game loop that simply renders every frame. BUt this is for another time.
