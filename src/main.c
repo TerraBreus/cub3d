@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:57:38 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/28 13:54:57 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/30 17:14:16 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,10 @@ int	main(void)
 	t_mlx	mlx_data;
 	t_cub3d	cub3d;
 
-	if (init_data(&mlx_data) != 0)
+	if (init_data(&mlx_data, &cub3d) != 0)
 		return (-1);
-	//TEST MAP MUST BE REMOVED LATER ON!
-	//hook_events();
 	mock_parser(&cub3d);
+	hook_events(&mlx_data, &cub3d);
 	mlx_loop(mlx_data.instance);
 	//clean_up();
 	return (0);
