@@ -32,9 +32,36 @@
 // 		and executable code)
 
 /*
+ * X11 Masking events. (very difficult and somewhat beyond the scope)
+ * These enums are used with 
+ * bit operators to specify what device we are getting input from.
+ * In essence, this can be the keyboard or the mouse.
+ * 
+ * There is an important destinction between KEY_PRESS and KEY_RELEASE:
+ * When holding down a key, we will first send a single
+ * key press and after half a second start spamming this key.
+ * (you can easily see this in any text editor when holding down a key)
+ *
+ * This makes movement (in f.e. a videogame) stuttered:
+ * you move a little, then stand still and start moving again.
+ *
+ * Thus we need to combine both KEYPRESS and a KEYRELEASE event;
+ * one to start the movement and one to stop it.
+*/
+
+typedef enum e_mask
+{
+	NO_EVENT_MASK = 0L,
+	KEY_PRESS_MASK = (1L << 0),
+	KEY_RELEASE_MASK = (1L << 1),
+	BUTTON_PRESS_MASK = (1L << 2),
+	STRUCTURE_NOTIFY_MASK = (1L << 17)
+}	t_mask;
+/*
  * X11 Events with their corresponding values.
- * They are used to identify what kind of 
- * event is triggered in the mlx_hook() function.
+ * In addition to the masking, these enums are used to 
+ * identify what kind of event is triggered in 
+ * the mlx_hook() function.
  * (see hook_events.c)
  * for more documentation see:
  * https://harm-smits.github.io/42docs/libs/minilibx/events.html
@@ -184,3 +211,5 @@ int		init_data(t_mlx *data);
 
 //ONLY FOR TESTING WITHOUT PARSING READY
 void	mock_parser(t_cub3d *cub3d);
+
+void	hook_events(t_mlx *mlx_data, t_level *level);
