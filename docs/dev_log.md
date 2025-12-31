@@ -411,7 +411,6 @@ I'm sure you can see that the following codeblocks are again, very similar:
             ```
         </td>
         <td>
-            ```c
             {
             	result += fabs(dsx_dsy[0]);
             	x += nxt_xy[0];
@@ -428,7 +427,6 @@ I'm sure you can see that the following codeblocks are again, very similar:
             		break ;
             	}
             }
-            ```
         </td>
     </tr>
 </table>
