@@ -34,7 +34,6 @@ $(NAME) : $(MLX) $(OBJ)
 
 clean :
 	rm -rf $(OBJ)
-	rmdir obj
 	rm -rf $(MLX_PATH)
 
 fclean : clean
