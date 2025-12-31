@@ -80,7 +80,7 @@
  *	And that is about all this function does!
 */
 
-double	find_next_gridline(double pos, double dir)
+double	find_gridline(double pos, double dir)
 {
 	double	result;
 
