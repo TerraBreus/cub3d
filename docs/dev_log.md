@@ -303,7 +303,10 @@ dx and dy are the direction of the ray in respectively its x and y direction. If
 ```c
 double  dsx_dsy[2];
 ```
-This one is a bit more tricky without any visualization. Imagine a grid with any line drawn through it. Can you imagine that line having an x and a y component? Now look at when the line hits a grid line and split it again in an x and a y component. That is what this variable holds.
+Imagine a grid with any line drawn through it. (oh dear god help) (you can ignore the really long red and really long green line) I drew them automatically cause _triangles are my favorite shape_ (SO to Alt J).
+<img width="1343" height="608" alt="image" src="https://github.com/user-attachments/assets/66771757-791a-46f6-879b-da6cae1513cf" />
+
+Can you see the red and green line following the blue line? `dsx` is the length of the ray when it **hits a vertical line** (the red line) and `dsy` is the length of the ray when it **hits a horizontal line** (the green line). I hope the drawing skills are able to form a triangle between `dsx` and `nxt_x` and respectively between `dsy` and `nxt_y`. We love triangles cause they adhere to trigonometry. For advanced readers you might be able to understand the use of knowing the angle.
 
 ```c
 double  nxt_xy[2];
