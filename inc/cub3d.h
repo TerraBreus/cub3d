@@ -55,3 +55,11 @@ void	mock_parser(t_cub3d *cub3d);
 // In simple terms we connect input from the player to the
 // corresponding action. (we hook events to specific functions)
 void	hook_events(t_mlx *mlx_data, t_cub3d *cub3d);
+
+// -- RAYCASTING FUNCTIONS --
+// The following functions can be found in the raycasting folder under src.
+
+// The following function finds the next gridline for either
+// the x or the y direction. A more detailed description of
+// this function can be found in the file find_gridline.c
+double	find_gridline(double pos, double dir);
