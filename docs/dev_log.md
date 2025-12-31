@@ -426,3 +426,23 @@ I'm sure you can see that the following codeblocks are again, very similar:
 </td>	
 </tr>	
 </table>
+
+Well, there are some differences here. Particularly in the naming of NORTH, SOUTH, EAST, WEST. We also have two different functions being called (detect_wall_vert and detext_wall_hori. This makes it annoying to simplify. But in essence these two codeblocks do the same.
+
+First we add the length of our ray (to the next and closest gridline) to our result. This is what raycasting is. Instead of following the ray bit by bit (which in theory would be inifinitesimely small) (love that word), we simply do it every time we pass a gridline since our walls can only be starting (and ending) at a gridline. They are in essence a square in our map, always filling an entire block (So x; 12-13 and y: 15-16 would be a block at position (12,15), (12.16), (13,15) and (13,16). Gosh visualization would be nice here).
+
+Next we must update our x and y coordinates since we have now followed the ray to a new position. In the first scenario (where dsy is smaller) our y coordinate is now on the gridline. Thus we only need to add `nxt_y` to our current y-coordinate and voila!
+
+Its respective coordinate (in the first scenario this is the x-coordinate), is a little more tricky. Again we use pythagoras theorem and the pythagorean identity (or SOHCAHTOA).
+```
+    Opposite/adjacent = Hypothenuse * sin/cos (angle)
+```
+(This seriously only makes sense after you draw everything out. Which is why I started with the [geometry_game](../alpha_and_beta_cub3d/geometry_game).
+
+Because we used the unit circle our `dx` and `dy` are respectively `cos(angle)` and `-sin(angle)`
+
+Next up is:
+```c
+	if (detect_wall_hori(dx_dy[1], (int) x, (int) y, data))
+```
+which is another part of code I won't discuss in detail currently but basically we want to see if we have hit a wall at the gridline (since we will only find walls at the gridlines).
