@@ -278,3 +278,36 @@ typedef struct s_cub3d
 I am very tired and hungover today so no big ballsy moves today. spent most of my time thinking about my nvim setup however it sparked some energy for aesathetics and readability so I wrote some descriptions and aesthetics for the cub3d.h file. Also added X11 events for mlx_hook() which I will get into more next time.
 ## 30-12
 Pffff another day of what seems like small progress. But I actually did alot! I wrote alot of descriptions and refactored much of the header for readability. I also learned a bit about masking and events from the X11 library which admittedly is still very daunting and confusing. I have some ideas on how to make movement smoother (which I haven't developed yet) but when pressing a key you usually get `a` (pause) `aaaaaaaaaaaaaaaaaaaa` which will make movement feel janky. I can fix this by having an event once the key is pressed and once the key is released and having a game loop that simply renders every frame. BUt this is for another time.
+
+## 31-12
+Right I want to have a look at the raytracer part since ultimately this is the singular thing I do 100% without Johanna. I am going to look at what I wrote last time and try to recapture my thoughts.
+
+First thing I see. I had a t_ray structure:
+```c
+typedef struct	s_ray {
+	double	ray_length;
+	int		pixel_length;
+	e_side	side;
+	double	pos_wall_hit;
+}	t_ray;
+```
+
+Now on to the function itself. [code from ray_shooter_alpha](./alpha_and_beta_cub3d/ray_shooter_alpha/src/calc_ray_with_tex.c). For reference also below:
+
+Definition of variables:
+```c
+double  dx_dy[2];
+```
+dx and dy are the direction of the ray in respectively its x and y direction. If a ray was shooting directly upwards (angle is 90 degrees or 1/2 Pi) it would only travel in the x direction. Thus x would be 1 and y would be 0. These directional values are based on the unit circle. This isn't second nature to me but they're familiar enough to work with. What is important to know is that *for a specific ray these are constant*.
+
+```c
+double  dsx_dsy[2];
+```
+This one is a bit more tricky without any visualization. Imagine a grid with any line drawn through it. Can you imagine that line having an x and a y component? Now look at when the line hits a grid line and split it again in an x and a y component. That is what this variable holds.
+
+```c
+double  nxt_xy[2];
+```
+This is simply the distance to the next x or y gridline (respectively vertical or horizontal). Often these will be 1 in our iteration. I hope you can figure out why (hint: what happens if we hit a gridline?). It is important to note here what direction the ray is travelling since at any point there is a gridline to the right and to the lefft (and up and down) and we need to know which of those we are travelling towards.
+
+
