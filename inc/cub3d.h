@@ -6,13 +6,14 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 11:07:29 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/30 17:15:20 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/31 12:08:52 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../mlx/mlx.h"
 #include "structs.h"
 #include "enums.h"
+#include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
