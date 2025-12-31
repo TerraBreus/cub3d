@@ -370,3 +370,13 @@ double  calc_next_gridline(double pos, double dir)
 }
 ```
 
+Now we know the distance to the next gridlines we will at some point pass (if we do not hit a wall that is).
+
+Remember that ray we are following? Well now we want to see what the distance of the ray is when we have hit the x-gridline, and respectively what distance of the ray is before we hit the y-gridline. I won't go into to much detail here either but we use pythagoras theorem to calculate this.
+
+```c
+dsx_dsy[0] = nxt_xy[0] / dx_dy[0];
+dsx_dsy[1] = nxt_xy[1] / dx_dy[1];
+```
+
+
