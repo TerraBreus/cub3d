@@ -449,3 +449,26 @@ Next up is:
 	if (detect_wall_hori(dx_dy[1], (int) x, (int) y, data))
 ```
 which is another part of code I won't discuss in detail currently but basically we want to see if we have hit a wall at the gridline (since we will only find walls at the gridlines).
+
+If we **have** hit a wall then we technically are done. We have found a wall and we no longer need to continue or ray. However we will have set a couple of variables for our `t_ray` structure so that we can correctly calculate the textures later on.
+
+First things first is which side of the wall we have hit. Since, if we have hit a vertical gridline, we could have hit it from the right or from the left. These are both different sides that can have different textures. We know which side by looking at what direction (in either x or y) our ray is travelling in.
+``` c
+if (dx_dy[0] > 0)
+    ray->side = EAST;
+else
+	ray->side = WEST;
+```
+The following three assignments are somewhat straightforward.
+```c
+ray->ray_length = result;
+ray->pos_wall_hit = y - floor(y);
+ray->pixel_length = convert_to_vert_line(ray->ray_length);
+```
+`pos_wall_hit` is the position on the wall (which can be any float between 0.0 and 1.0). A simple modulus will do -> `fmod(12.45, 1) = 0.45`
+
+I think I used AI here which is why I got `12.45 - floor(12.45) = 12.45 - 12 = 0.45`. But it might also have to do with the fact that 13.0 can both be the beginning of a texture as the end of a texture. Not too sure about this...
+
+the `pixel_length` basically is the next step of raycasting and is a (rather simple) conversion of a ray, to a vertical stripe to project on your screen. The longer the ray, the smaller the vertical stripe.
+
+Well... That is it for now I think! See you in the next year :)
