@@ -378,5 +378,5 @@ Remember that ray we are following? Well now we want to see what the distance of
 dsx_dsy[0] = nxt_xy[0] / dx_dy[0];
 dsx_dsy[1] = nxt_xy[1] / dx_dy[1];
 ```
-
+The nice thing here is that dx and dy are also the angle of the ray with respect to the x or y axis (this is because of the unit circle).
 
