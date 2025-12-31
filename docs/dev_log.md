@@ -310,4 +310,63 @@ double  nxt_xy[2];
 ```
 This is simply the distance to the next x or y gridline (respectively vertical or horizontal). Often these will be 1 in our iteration. I hope you can figure out why (hint: what happens if we hit a gridline?). It is important to note here what direction the ray is travelling since at any point there is a gridline to the right and to the lefft (and up and down) and we need to know which of those we are travelling towards.
 
+```c
+double  result;
+```
+Well the function is called `calc_ray_with_tex` so take a wild guess what this variable is for.
+
+**On to the execution!** We start with a simple while loop that iterates for a maximum of 30 times. This is simply to prevent that, if we do not hit a wall, we don't iterate for ever. Otherwise the loop will break simply by hitting a wall and then the `break` function gets called.
+
+We start by calculating the following (I'll explain what this is in a bit).
+```c
+nxt_xy[0] = -1 * fmod(x, 1);
+		if (nxt_xy[0] == 0)
+		{
+			nxt_xy[0] = 1;
+			if (dx_dy[0] < 0)
+				nxt_xy[0] = -1;
+		}
+		else if (dx_dy[0] > 0)
+			nxt_xy[0] = nxt_xy[0] + 1;
+```
+We constantly calculate some part for x and some part for y. You can see how similar above code block is with the one below.
+```c
+nxt_xy[1] = -1 * fmod(y, 1);
+		if (nxt_xy[1] == 0)
+		{
+			nxt_xy[1] = 1;
+			if (dx_dy[1] < 0)
+				nxt_xy[1] = -1;
+		}
+		else if (dx_dy[1] > 0)
+			nxt_xy[1] = nxt_xy[1] + 1;
+```
+
+Basically what we are doing here is trying to figure out where the next grid line is from our current position.
+
+A `dx_dy` is used in this section so perhaps I should explain a little where these come from:
+```c
+	dx_dy[0] = cos(angle);
+	dx_dy[1] = -sin(angle);
+```
+These come from the unit circle (google it). A small difference is the minus sign in the sinus. This has to do with the fact that the y-axis in our game is flipped. The mlx library considers the first pixel to be in the upper left corner. Thus our y-axis starts counting from top to bottom (which in normal cartesion coordinates (again google it, but it's not that important) is from bottom to top). We count the other way around so we need to use a minus sign to convert everything back to "standard mathematics".
+
+Good! Now that that is out of the way we can try to simplify these two blocks of code into a singular function!
+```c
+double  calc_next_gridline(double pos, double dir)
+{
+    double  result;
+    
+    result = -1 * fmod(pos, 1);     //if pos = 12.2 then the next line is either -0.2 or 0.8
+    if (result == 0)                //When we are on a gridline already the next line should be either 1 or -1
+    {
+        result = 1;
+        if (dir < 0)
+            result = -1;
+    }
+    else if (dir > 0)
+        result += 1;                // -(0.2) + 1 = 0.8 (We have established which line is the next line with consideration of the direction of the ray.
+    return (result);
+}
+```
 
