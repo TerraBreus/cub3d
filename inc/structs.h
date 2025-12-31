@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 17:05:59 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/30 17:15:53 by zivanov          ###   ########.fr       */
+/*   Updated: 2025/12/31 11:40:15 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ typedef struct s_level
  *  This structure makes use of the t_dir enums and can be used
  *  as following: textures.paths[NO/EA/SO/WE] and
  *  similarly textures.mlx_img[NO/EA/SO/WE]
+ *
+ *  TODO: When loading in an image I will need to know
+ *  their width and height for the raytracing.
 */
 
 typedef struct s_textures
