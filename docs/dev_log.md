@@ -292,7 +292,7 @@ typedef struct	s_ray {
 }	t_ray;
 ```
 
-Now on to the function itself. [code from ray_shooter_alpha](./alpha_and_beta_cub3d/ray_shooter_alpha/src/calc_ray_with_tex.c). For reference also below:
+Now on to the function itself. [code from ray_shooter_alpha](../alpha_and_beta_cub3d/ray_shooter_alpha/src/calc_ray_with_tex.c). For reference also below:
 
 Definition of variables:
 ```c
