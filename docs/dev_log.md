@@ -380,3 +380,55 @@ dsx_dsy[1] = nxt_xy[1] / dx_dy[1];
 ```
 The nice thing here is that dx and dy are also the angle of the ray with respect to the x or y axis (this is because of the unit circle).
 
+So the next thing is the very principle of the raycasting. We want to compare the **length** of `dsx` and `dsy`. (note that distance can be negative as it has a direction but in my terminology, length is simply the size of the distance without direction and therefore always positive). This is why we use `fabs(dsx)` and `fabs(dsy)`.
+
+The principe is as follows. whichever gridline (either horizontal or vertical) we pass first, is the one we will travel towards. Again, a visualization would be incredibly useful but my own imagination will have to do for now.
+
+I'm sure you can see that the following codeblocks are again, very similar:
+<table>
+    <tr>
+        <td>dsy is smaller</td><td>dsx is smaller</td>
+    </tr>
+    <tr>
+        <td>
+            ```c
+            {
+            	result += fabs(dsx_dsy[1]);
+            	y += nxt_xy[1];
+            	x += (dsx_dsy[1] * dx_dy[0]);
+            	if (detect_wall_hori(dx_dy[1], (int) x, (int) y, data))
+            	{
+            		if (dx_dy[1] > 0)
+            			ray->side = SOUTH;
+            		else
+            			ray->side = NORTH;
+            		ray->ray_length = result;
+            		ray->pos_wall_hit = x - floor(x);
+            		ray->pixel_length = convert_to_vert_line(ray->ray_length);
+            		break ;
+            	}
+            }
+            ```
+        </td>
+        <td>
+            ```c
+            {
+            	result += fabs(dsx_dsy[0]);
+            	x += nxt_xy[0];
+            	y += (dsx_dsy[0] * dx_dy[1]);
+            	if (detect_wall_vert(dx_dy[0], (int) x, (int) y, data))
+            	{
+            		if (dx_dy[0] > 0)
+            			ray->side = EAST;
+            		else
+            			ray->side = WEST;
+            		ray->ray_length = result;
+            		ray->pos_wall_hit = y - floor(y);
+            		ray->pixel_length = convert_to_vert_line(ray->ray_length);
+            		break ;
+            	}
+            }
+            ```
+        </td>
+    </tr>
+</table>
