@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 14:19:22 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/30 14:19:38 by zivanov          ###   ########.fr       */
+/*   Updated: 2026/01/02 13:32:42 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,11 @@ int	keyboard_handler(int keynum, void *voided_cub3d)
 	mlx_data = &cub3d->mlx_data;
 	if (keynum == 65307)
 		close_window(mlx_data->instance);
+	else
+		printf("Keynum \"%i\" has no handler\n", keynum);
 	return (0);
 }
+
 
 void	hook_events(t_mlx *mlx_data, t_cub3d *cub3d)
 {
