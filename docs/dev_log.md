@@ -472,3 +472,6 @@ I think I used AI here which is why I got `12.45 - floor(12.45) = 12.45 - 12 = 0
 the `pixel_length` basically is the next step of raycasting and is a (rather simple) conversion of a ray, to a vertical stripe to project on your screen. The longer the ray, the smaller the vertical stripe.
 
 Well... That is it for now I think! See you in the next year :)
+
+## 02-01
+Simply put I rewrote a lot of my previous entry in to actual code. One of the biggest contributing factors was writing a `ray_utils` structure that holds all variables I like to use in my `calc_ray_length_with_tex` function (I renamed this to `shoot_ray` in the newer version)
