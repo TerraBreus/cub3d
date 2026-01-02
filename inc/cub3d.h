@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 11:07:29 by zivanov           #+#    #+#             */
-/*   Updated: 2026/01/02 13:29:59 by zivanov          ###   ########.fr       */
+/*   Updated: 2026/01/02 16:30:04 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@
 // Dimensions of the window for the game.
 # define WINDOWLENGTH 1920
 # define WINDOWHEIGHT 1080
+
+//I like to use an array holding the X and the Y value of something.
+//Coming from a mathematical background, I prefer the first value
+//to be X and the second value to be Y when separating the two.
+//(because that is also how we learned to work with vectors)
+//
+//So: position[2] would hold the x value in 
+//position[0] and y in position[1]
+# define X 0
+# define Y 1
 
 //--- --- --- F U N C T I O N S --- --- ---
 //- - - - - - - - - - - - - - - - - - - - -
@@ -59,10 +69,39 @@ void	mock_parser(t_cub3d *cub3d);
 void	hook_events(t_mlx *mlx_data, t_cub3d *cub3d);
 
 // -- RAYCASTING FUNCTIONS --
-// The following functions can be found in the raycasting folder under src.
+// Functions relevant for the casting of rays and
+// can be found in the raycasting folder.
 
 // The following function finds the next gridline for either
 // the x or the y direction. A more detailed description of
 // this function can be found in the file find_gridline.c
 double	find_gridline(double pos, double dir);
+
+// Shoots a ray untill it hits a wall using the DDA algorithm.
+void	shoot_ray(t_ray *ray, t_ray_utils *u, t_level *level);
+
+// If the ray hits a wall (on either the x or the y side)
+// we update the ray with some final parameters. (where the wall
+// was hit, which side of the wall was hit etc)
+void	finalize_ray(t_ray *ray, t_ray_utils *utils, int x_or_y);
+
+// This is a safety check to see whether the position in the map
+// we are trying to access/check actually exists (in case we
+// somehow skipped the NULL terminator)
+int		out_of_bounds(int x, int y, t_level *level);
+
+// Wall detection. We split into a horizontal wall checker and
+// a vertical wall checker. We need to take the direction into
+// account since if we are travelling into a negative direction
+// we want to check one gridsquare back.
+int		detect_wall_hori(t_ray_utils *utils, t_level *level);
+int		detect_wall_vert(t_ray_utils *utils, t_level *level);
+
+// -- MATH UTILS --
+
+//Cos() and sin() functions work with radians, humans are known to use degrees
+//I like degrees because I never had one, so I prefer to think in degrees
+//and then convert to radians when needed.
+double	deg_to_rad(double degree);
+
 #endif
