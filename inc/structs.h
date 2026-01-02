@@ -6,7 +6,7 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 17:05:59 by zivanov           #+#    #+#             */
-/*   Updated: 2026/01/02 13:41:45 by zivanov          ###   ########.fr       */
+/*   Updated: 2026/01/02 15:56:32 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,26 +93,44 @@ typedef struct s_textures
  * however since we ARE working with textures we
  * need to know a little more about every ray we shoot:
  * 		- Where on the wall did the ray hit?
- * 		- Which direction of the wall did we hit?
+ * 		- Which side of the wall did we hit?
  * 	NB: We could also combine the two by having a float
  * 	that has the wall side when we convert to int and has
  * 	the pos on the wall when we take the fmod(x, 1).
  * 	(1.34 would be side 1 (EA) and pos_wall_hit .34)
- *
- * 	The angle_degree is not really relevant for the ray itself but
- * 	we can save some variable space by including it
- * 	in this structure since we use it both for calculating
- * 	the ray as for drawing it to the screen.
 */
 
 typedef struct s_ray
 {
-	double	angle_deg;
 	double	length;
 	double	pos_wall_hit;
-	t_dir	wall_dir;
+	t_dir	side;
 }	t_ray;
 
+/*
+ * -- RAY UTILS STRUCTURE --
+ * These variables are important for calculating
+ * the ray but not necessarily the ray itself.
+ *
+ * To effectively pass all variables as one
+ * parameter, this structure is created. (thanks norminette)
+ *
+ * angle_deg; the degree in which the ray is heading (unit circle).
+ * pos; the current position of the ray (starts at player pos).
+ * delta; the respective direction of X and X (dependant on the angle)
+ * ds; distance of the ray before hitting a X/Y gridline.
+ * next_gridline; distance (for X/Y) to the next gridline from current X/Y pos.
+ *
+*/
+
+typedef struct s_ray_utils
+{
+	double	angle_deg;
+	double	pos[2];
+	double	delta[2];
+	double	ds[2];
+	double	next[2];
+}	t_ray_utils;
 /*
  * -- COLOR STRUCTURE --
  *  In essence this is a simple array of three integers
