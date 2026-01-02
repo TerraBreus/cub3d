@@ -6,10 +6,13 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 17:05:59 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/31 11:40:15 by zivanov          ###   ########.fr       */
+/*   Updated: 2026/01/02 13:41:45 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef STRUCTS_H
+# define STRUCTS_H
+# include "enums.h"
 // --- --- --- S T R U C T U R E S --- --- ---
 // - - - - - - - - - - - - - - - - - - - - - -
 // (because we can't pass a hundred
@@ -78,7 +81,37 @@ typedef struct s_textures
 {
 	char	*paths[4];
 	void	*mlx_img[4];
+	int		width[4];
+	int		height[4];
 }	t_textures;
+
+/*
+ * -- RAY STRUCTURE --
+ * If we weren't working with textures,
+ * the only relevant part of the ray would be its
+ * length and we wouldn't need this structure,
+ * however since we ARE working with textures we
+ * need to know a little more about every ray we shoot:
+ * 		- Where on the wall did the ray hit?
+ * 		- Which direction of the wall did we hit?
+ * 	NB: We could also combine the two by having a float
+ * 	that has the wall side when we convert to int and has
+ * 	the pos on the wall when we take the fmod(x, 1).
+ * 	(1.34 would be side 1 (EA) and pos_wall_hit .34)
+ *
+ * 	The angle_degree is not really relevant for the ray itself but
+ * 	we can save some variable space by including it
+ * 	in this structure since we use it both for calculating
+ * 	the ray as for drawing it to the screen.
+*/
+
+typedef struct s_ray
+{
+	double	angle_deg;
+	double	length;
+	double	pos_wall_hit;
+	t_dir	wall_dir;
+}	t_ray;
 
 /*
  * -- COLOR STRUCTURE --
@@ -116,3 +149,4 @@ typedef struct s_cub3d
 	t_mlx		mlx_data;
 	t_level		level;
 }	t_cub3d;
+#endif
