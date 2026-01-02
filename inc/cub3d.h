@@ -6,17 +6,19 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 11:07:29 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/31 12:08:52 by zivanov          ###   ########.fr       */
+/*   Updated: 2026/01/02 13:29:59 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../mlx/mlx.h"
-#include "structs.h"
-#include "enums.h"
-#include <math.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+#ifndef CUB3D_H
+# define CUB3D_H
+# include "../mlx/mlx.h"
+# include "enums.h"
+# include "structs.h"
+# include <math.h>
+# include <stdio.h>
+# include <stdbool.h>
+# include <stdlib.h>
 
 // - - - - M A C R O S - - - -
 // - - - - - - - - - - - - - -
@@ -26,8 +28,8 @@
 // NOTE: This will require a rebuild.
 
 // Dimensions of the window for the game.
-#define WINDOWLENGTH 1920
-#define WINDOWHEIGHT 1080
+# define WINDOWLENGTH 1920
+# define WINDOWHEIGHT 1080
 
 //--- --- --- F U N C T I O N S --- --- ---
 //- - - - - - - - - - - - - - - - - - - - -
@@ -63,3 +65,4 @@ void	hook_events(t_mlx *mlx_data, t_cub3d *cub3d);
 // the x or the y direction. A more detailed description of
 // this function can be found in the file find_gridline.c
 double	find_gridline(double pos, double dir);
+#endif

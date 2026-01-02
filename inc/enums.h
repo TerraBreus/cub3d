@@ -6,10 +6,12 @@
 /*   By: zivanov <zivanov@student.codam.nl>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 17:07:04 by zivanov           #+#    #+#             */
-/*   Updated: 2025/12/30 17:15:57 by zivanov          ###   ########.fr       */
+/*   Updated: 2026/01/02 13:27:55 by zivanov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ENUMS_H
+# define ENUMS_H
 // --- --- --- E N U M S --- --- --- ---
 // - - - - - - - - - - - - - - - - - - -
 // (the bridge between readable
@@ -75,3 +77,4 @@ typedef enum e_dir
 	SO = 2,
 	WE = 3
 }	t_dir;
+#endif
